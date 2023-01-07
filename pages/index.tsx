@@ -104,13 +104,13 @@ export default function Home() {
                 className={c.grid__item}
                 logo={<LogoTwitter />}
                 url="https://twitter.com/dewiz_xzy"
-                title="@dewiz_xzy"
+                text="@dewiz_xzy"
               />
               <ContactCard
                 className={c.grid__item}
                 logo={<LogoGithub />}
-                url="https://github.com/dewiz"
-                title="/dewiz"
+                url="https://github.com/dewiz-xyz"
+                text="/dewiz-xyz"
               />
             </div>
           </div>

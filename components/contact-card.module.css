@@ -20,7 +20,7 @@
   height: 128px;
 }
 
-.title {
+.text {
   color: var(--fg-color-link);
   font-weight: normal;
   margin-block-start: auto;
