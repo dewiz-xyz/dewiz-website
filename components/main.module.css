@@ -1,0 +1,6 @@
+.main {
+  grid-area: main;
+
+  position: relative;
+  z-index: 1;
+}

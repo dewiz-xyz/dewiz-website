@@ -1,0 +1,42 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  align-items: center;
+  text-align: center;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.avatar svg {
+  aspect-ratio: 1;
+  height: 128px;
+}
+
+.title {
+  color: var(--fg-color-link);
+  font-weight: normal;
+  margin-block-start: auto;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.content {
+  z-index: 2;
+}

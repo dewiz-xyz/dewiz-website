@@ -1,0 +1,49 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  align-items: center;
+  text-align: center;
+}
+
+.avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.avatar img {
+  clip-path: circle(50%);
+  max-width: 128px;
+  max-height: 128px;
+}
+
+.content {
+  z-index: 2;
+}
+
+.name,
+.role {
+  color: var(--fg-color-link);
+  font-weight: normal;
+}
+
+.role {
+  margin-block-end: var(--spacing-4);
+  font-size: var(--font-size-xs);
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+.card a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+

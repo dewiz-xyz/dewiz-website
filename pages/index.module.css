@@ -1,0 +1,111 @@
+.root {
+  min-height: 100vh;
+  margin: 0 auto;
+
+  display: grid;
+  grid-gap: 0 var(--spacing-8);
+  grid-template-columns: 1fr minmax(min-content, var(--max-width)) 1fr;
+  grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-areas:
+    "gutter-l header gutter-r"
+    "gutter-l  main  gutter-r"
+    "gutter-l footer gutter-r";
+
+  position: relative;
+}
+
+.section {
+  position: relative;
+  padding: var(--spacing-8) 0;
+}
+
+/**
+ * Dirty hack to make scroll navigation to play nice with the sticky header.
+
+ * When using #anchors for navigation, the default behavior of the browser is to
+ * Set the scroll position at the bounding box of the element whose ID matches the target.
+ * However the bounding box of the section would be hidden under the sticky header.
+ * As a workaround, we place an "anchor" element outside of the bounding box taking
+ */
+.anchor {
+  position: absolute;
+  pointer-events: none;
+  top: calc(-1 * var(--header-height));
+}
+
+.title_1,
+.title_2 {
+  color: var(--fg-color-2);
+  font-weight: normal;
+  margin-bottom: var(--spacing-8);
+  text-align: center;
+}
+
+.home_logo__wrapper {
+  max-width: 546px;
+  margin: 0 auto var(--spacing-8);
+}
+
+.team_grid {
+  --columns: 3;
+  --gap: var(--spacing-8);
+  --gap-count: calc(var(--columns) - 1);
+}
+
+.team_grid.grid__item {
+  min-width: 256px;
+}
+
+@media (max-width: 1071.99px) {
+  .team_grid {
+    --columns: 2;
+  }
+}
+
+@media (max-width: 767.99px) {
+  .team_grid {
+    --columns: 1;
+  }
+}
+
+.contact_grid {
+  --columns: 4;
+  --gap: var(--spacing-8);
+  --gap-count: calc(var(--columns) - 1);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.contact_grid.grid__item {
+  min-width: 192px;
+}
+
+
+@media (max-width: 1071.99px) {
+  .contact_grid {
+    --columns: 3;
+  }
+}
+
+@media (max-width: 767.99px) {
+  .contact_grid {
+    --columns: 2;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.grid__item {
+  flex-basis: calc(
+    (100% / var(--columns)) - (var(--gap) / var(--columns) * var(--gap-count))
+  );
+}
+
