@@ -32,7 +32,7 @@ export default function Header() {
           </nav>
           <nav className={c.mobile_nav}>
             <input id="toggle-nav" type="checkbox" className={c.toggle} />
-            <label htmlFor="toggle-nav" className={c.toggle_label} tabindex="0">
+            <label htmlFor="toggle-nav" className={c.toggle_label} tabIndex={0}>
               Menu
             </label>
             <div className={c.toggle_content}>
