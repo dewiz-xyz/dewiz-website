@@ -1,9 +1,10 @@
 .root {
   min-height: 100vh;
+  min-width: 360px;
   margin: 0 auto;
 
   display: grid;
-  grid-gap: 0 var(--spacing-8);
+  grid-gap: 0 var(--min-gutter);
   grid-template-columns: 1fr minmax(min-content, var(--max-width)) 1fr;
   grid-template-rows: var(--header-height) 1fr var(--footer-height);
   grid-template-areas:
@@ -43,7 +44,19 @@
 
 .home_logo__wrapper {
   max-width: 546px;
-  margin: 0 auto var(--spacing-8);
+  margin: 0 auto var(--spacing-4);
+}
+
+@media (max-width: 1071.99px) {
+  .home_logo__wrapper {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767.99px) {
+  .home_logo__wrapper {
+    max-width: 60%;
+  }
 }
 
 .team_grid {
@@ -53,7 +66,7 @@
 }
 
 .team_grid.grid__item {
-  min-width: 256px;
+  /* min-width: 256px; */
 }
 
 @media (max-width: 1071.99px) {
@@ -80,7 +93,7 @@
 }
 
 .contact_grid.grid__item {
-  min-width: 192px;
+  /* min-width: 192px; */
 }
 
 
@@ -93,6 +106,12 @@
 @media (max-width: 767.99px) {
   .contact_grid {
     --columns: 2;
+  }
+}
+
+@media (max-width: 419.99px) {
+  .contact_grid {
+    --columns: 1;
   }
 }
 

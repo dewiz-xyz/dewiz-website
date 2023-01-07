@@ -69,6 +69,7 @@ a:not([class]) {
 
 :root {
   --max-width: 1440px;
+  --min-gutter: 2rem;
 
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
@@ -86,13 +87,6 @@ a:not([class]) {
   --font-size-md: 1.25rem;
   --font-size-lg: 1.75rem;
   --font-size-xl: 2.5rem;
-}
-
-@media (max-width: 587.98px) {
-  :root {
-    --header-height: 8rem;
-    --section-height: calc(100vh - var(--header-height));
-  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -115,6 +109,8 @@ a:not([class]) {
     --logo-color-tertiary: hsl(202, 100%, 80%);
 
     --shadow-color: hsla(177, 100%, 3%, 0.75);
+
+    --bg-overlay-menu: hsla(177, 100%, 3%, 0.75);
   }
 
   html {
@@ -142,6 +138,8 @@ a:not([class]) {
     --logo-color-tertiary: hsl(190, 100%, 15%);
 
     --shadow-color: hsla(209, 100%, 93%, 0.75);
+
+    --bg-overlay-menu: hsla(209, 100%, 93%, 0.75);
   }
 
   html {

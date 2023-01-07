@@ -43,9 +43,24 @@
   z-index: 1;
 }
 
+.header a {
+  color: var(--fg-color-link);
+  font-size: var(--font-size-sm);
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .logo {
   grid-area: logo;
-  transform: translateY(-15%);
+  transform: translateY(-10%);
 }
 
 .logo .logo__hat_s {
@@ -66,22 +81,10 @@
 }
 
 .nav > ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   gap: var(--spacing-16);
-}
-
-.nav a {
-  color: var(--fg-color-link);
-  font-size: var(--font-size-sm);
-}
-
-.nav a:hover {
-  text-decoration: underline;
 }
 
 @media (max-width: 767.98px) {
@@ -98,22 +101,103 @@
   }
 }
 
-@media (max-width: 587.98px) {
-  .header__content {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "logo"
-      "nav";
-    gap: 0;
-    justify-items: center;
-  }
+.mobile_nav {
+  display: none;
+  margin-inline-start: auto;
+}
 
-  .logo {
-    transform: initial;
-  }
+.toggle_content {
+  position: absolute;
+  inset: calc(var(--header-height) * 4 / 5) calc(-1 * var(--min-gutter)) auto;
+  padding: var(--spacing-4) var(--min-gutter);
+  z-index: 4;
 
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+      to bottom,
+      var(--bg-color-0-start) 0%,
+      transparent var(--header-height)
+    ),
+    var(--bg-overlay-menu);
+
+  --duration: 0.125s;
+  --timing: ease;
+  transition: opacity var(--duration) var(--timing);
+  pointer-events: none;
+}
+
+.toggle_content > ul {
+  display: grid;
+  gap: var(--spacing-4);
+  text-align: center;
+}
+
+.toggle {
+  display: none;
+}
+
+.toggle_label {
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  color: var(--fg-color-link);
+}
+
+.toggle + .toggle_label + .toggle_content {
+  /* visibility: hidden; */
+  opacity: 0;
+  --duration: 0.125s;
+  --timing: ease;
+  transition: opacity var(--duration) var(--timing);
+}
+
+.toggle:checked + .toggle_label {
+  color: var(--fg-color-0);
+}
+
+/**
+ * Dirty hack to collapse the menu when clicking on anywhare on the page.
+ * Make the toggle label to ocuppy the entire screen.
+ * Notice that the menu content has a z-index larger than the label, so it
+ * will still be clickable.
+ */
+
+.toggle + .toggle_label::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+
+  --duration: 0.125s;
+  --timing: ease;
+  transition: background var(--duration) var(--timing);
+}
+
+.toggle:checked + .toggle_label::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: hsla(var(--bg-color-0-hsl), 0.15);
+  pointer-events: initial;
+}
+
+.toggle:checked + .toggle_label + .toggle_content {
+  /* visibility: visible; */
+  opacity: 1;
+
+  --duration: 0.125s;
+  --timing: ease;
+  transition: opacity var(--duration) var(--timing);
+  pointer-events: initial;
+}
+
+@media (max-width: 629.98px) {
   .nav {
-    justify-self: initial;
+    display: none;
+  }
+
+  .mobile_nav {
+    display: block;
   }
 }
