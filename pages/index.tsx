@@ -89,8 +89,7 @@ export default function Home() {
                 url="https://twitter.com/0xdecr1pto"
                 name="0xdecr1pto"
                 companyRole="Co-Founder"
-                description="7+ years of experience in software engineering, previously in web3 projects. 
-                Car Flipper."
+                description="7+ years of experience in software engineering, previously in web3 projects. Car Flipper."
               />
             </div>
           </div>
