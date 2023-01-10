@@ -122,8 +122,8 @@ export default function Home() {
               <ContactCard
                 className={c.grid__item}
                 logo={<LogoTwitter />}
-                url="https://twitter.com/dewiz_xzy"
-                text="@dewiz_xzy"
+                url="https://twitter.com/dewiz_xyz"
+                text="@dewiz_xyz"
               />
               <ContactCard
                 className={c.grid__item}
