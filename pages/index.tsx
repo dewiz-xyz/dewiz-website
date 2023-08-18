@@ -81,7 +81,7 @@ export default function Home() {
               chains, front-end engineering, on-chain/off-chain integrations and
               supporting services and agile project management.
             </p>
-            <p style={{ marginBlockEnd: "var(--spacing-16)" }}>
+            <p>
               We chose to conceal our identities and build our reputation around
               pseudonyms to protect our privacy and ourselves from authoritarian
               people, entities and governments.
