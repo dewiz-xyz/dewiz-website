@@ -10,6 +10,8 @@ import LogoHatL from "../public/logo-hat-l.svg";
 import avatarAmusingaxl from "../public/avatar-amusingaxl.png";
 import avatar0x3phemeralsoul from "../public/avatar-0x3phemeralsoul.png";
 import avatar0xdecr1pto from "../public/avatar-0xdecr1pto.png";
+import avatar0xcentur1on from "../public/avatar-0xcentur1on.png";
+import avatar0xp3th1um from "../public/avatar-0xp3th1um.png";
 import LogoTwitter from "../public/logo-twitter.svg";
 import LogoGithub from "../public/logo-github.svg";
 import c from "./index.module.css";
@@ -52,7 +54,8 @@ export default function Home() {
               <div className={c.home_logo__wrapper}>
                 <LogoHatL />
               </div>
-              <h1 className={c.title_1}>DeFi Engineering Services</h1>
+              <h1 className="srOnly">Dewiz</h1>
+              <h2 className={c.section__title}>DeFi Engineering Services</h2>
               <p>
                 We enable DeFi innovators to build on top of the main DeFi
                 protocols, providing technical expertise on both on-chain and
@@ -66,7 +69,7 @@ export default function Home() {
         <section className={c.section}>
           <span className={c.anchor} id="about-us"></span>
           <div className={c.section__content}>
-            <h1 className={c.title_1}>About Us</h1>
+            <h2 className={c.section__title}>About Us</h2>
             <p>
               We are buidlers! Dewiz co-founders are former MakerDAO Core Unit
               contributors, with more than 1 year of hands-on experience with
@@ -83,7 +86,10 @@ export default function Home() {
               pseudonyms to protect our privacy and ourselves from authoritarian
               people, entities and governments.
             </p>
-            <h2 className={c.title_2}>The Team</h2>
+          </div>
+        </section>
+          <section className={c.section}>
+            <h2 className={c.section__title}>The Team</h2>
             <div className={clsx(c.grid, c.team_grid)}>
               <TeamMemberCard
                 className={c.grid__item}
@@ -111,13 +117,28 @@ export default function Home() {
                 companyRole="Co-Founder"
                 description="7+ years of experience in software engineering, previously in web3 projects. Car Flipper."
               />
-            </div>
+              <TeamMemberCard
+                className={c.grid__item}
+                img={avatar0xcentur1on}
+                url="#"
+                name="0xcentur1on"
+                companyRole="Smart Contracts Engineer"
+                description="20+ years of experience in software engineering. Previously in banking and e-commerce. Ethereum fan. Tiktok addict."
+              />
+              <TeamMemberCard
+                className={c.grid__item}
+                img={avatar0xp3th1um}
+                url="#"
+                name="0xp3th1um"
+                companyRole="Smart Contracts Engineer"
+                description="6+ years of experience in software/smart-contract engineering for DeFi projects. Previously in academia. Music elitist."
+              />
           </div>
         </section>
         <section className={c.section}>
           <span className={c.anchor} id="contact"></span>
           <div className={c.section__content}>
-            <h1 className={c.title_1}>Contact</h1>
+            <h2 className={c.section__title}>Contact</h2>
             <div className={clsx(c.grid, c.contact_grid)}>
               <ContactCard
                 className={c.grid__item}

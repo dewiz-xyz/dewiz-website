@@ -24,7 +24,7 @@
  * Dirty hack to make scroll navigation to play nice with the sticky header.
 
  * When using #anchors for navigation, the default behavior of the browser is to
- * Set the scroll position at the bounding box of the element whose ID matches the target.
+ * set the scroll position at the bounding box of the element whose ID matches the target.
  * However the bounding box of the section would be hidden under the sticky header.
  * As a workaround, we place an "anchor" element outside of the bounding box taking
  */
@@ -34,8 +34,7 @@
   top: calc(-1 * var(--header-height));
 }
 
-.title_1,
-.title_2 {
+.section__title {
   color: var(--fg-color-2);
   font-weight: normal;
   margin-bottom: var(--spacing-8);
@@ -127,4 +126,3 @@
     (100% / var(--columns)) - (var(--gap) / var(--columns) * var(--gap-count))
   );
 }
-

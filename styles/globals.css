@@ -198,3 +198,16 @@ svg [class*="fill-secondary"] {
 svg [class*="fill-tertiary"] {
   fill: var(--logo-color-tertiary);
 }
+
+/**
+ * Helper classes
+ */
+
+.srOnly {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
