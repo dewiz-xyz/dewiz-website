@@ -10,8 +10,8 @@ import LogoHatL from "../public/logo-hat-l.svg";
 import avatarAmusingaxl from "../public/avatar-amusingaxl.png";
 import avatar0x3phemeralsoul from "../public/avatar-0x3phemeralsoul.png";
 import avatar0xdecr1pto from "../public/avatar-0xdecr1pto.png";
-import avatar0xcentur1on from "../public/avatar-0xcentur1on.png";
 import avatar0xp3th1um from "../public/avatar-0xp3th1um.png";
+import LogoDiscord from "../public/logo-discord.svg";
 import LogoTwitter from "../public/logo-twitter.svg";
 import LogoGithub from "../public/logo-github.svg";
 import c from "./index.module.css";
@@ -88,43 +88,43 @@ export default function Home() {
             </p>
           </div>
         </section>
-          <section className={c.section}>
-            <h2 className={c.section__title}>The Team</h2>
-            <div className={clsx(c.grid, c.team_grid)}>
-              <TeamMemberCard
-                className={c.grid__item}
-                img={avatarAmusingaxl}
-                url="https://twitter.com/amusingaxl"
-                name="@amusingaxl"
-                companyRole="Co-Founder"
-                description="8+ years of experience in software engineering and architecture.
+        <section className={c.section}>
+          <h2 className={c.section__title}>The Team</h2>
+          <div className={clsx(c.grid, c.team_grid)}>
+            <TeamMemberCard
+              className={c.grid__item}
+              img={avatarAmusingaxl}
+              url="https://twitter.com/amusingaxl"
+              name="@amusingaxl"
+              companyRole="Co-Founder"
+              description="8+ years of experience in software engineering and architecture.
                   Previously in banking, startups and web3 projects. Metal Head."
-              />
-              <TeamMemberCard
-                className={c.grid__item}
-                img={avatar0x3phemeralsoul}
-                url="https://twitter.com/0x3phemeralsoul"
-                name="@0x3phemeralsoul"
-                companyRole="Co-Founder"
-                description="10+ years of experience in product management. Previously in e-commerce, product manager at MakerDAO.
+            />
+            <TeamMemberCard
+              className={c.grid__item}
+              img={avatar0x3phemeralsoul}
+              url="https://twitter.com/0x3phemeralsoul"
+              name="@0x3phemeralsoul"
+              companyRole="Co-Founder"
+              description="10+ years of experience in product management. Previously in e-commerce, product manager at MakerDAO.
                   DeFi addict."
-              />
-              <TeamMemberCard
-                className={c.grid__item}
-                img={avatar0xdecr1pto}
-                url="https://twitter.com/0xdecr1pto"
-                name="0xdecr1pto"
-                companyRole="Co-Founder"
-                description="7+ years of experience in software engineering, previously in web3 projects. Car Flipper."
-              />
-              <TeamMemberCard
-                className={c.grid__item}
-                img={avatar0xp3th1um}
-                url="#"
-                name="0xp3th1um"
-                companyRole="Smart Contracts Engineer"
-                description="6+ years of experience in software/smart-contract engineering for DeFi projects. Previously in academia. Music elitist."
-              />
+            />
+            <TeamMemberCard
+              className={c.grid__item}
+              img={avatar0xdecr1pto}
+              url="https://twitter.com/0xdecr1pto"
+              name="0xdecr1pto"
+              companyRole="Co-Founder"
+              description="7+ years of experience in software engineering, previously in web3 projects. Car Flipper."
+            />
+            <TeamMemberCard
+              className={c.grid__item}
+              img={avatar0xp3th1um}
+              url="#"
+              name="0xp3th1um"
+              companyRole="Smart Contracts Engineer"
+              description="6+ years of experience in software/smart-contract engineering for DeFi projects. Previously in academia. Music elitist."
+            />
           </div>
         </section>
         <section className={c.section}>
@@ -132,6 +132,12 @@ export default function Home() {
           <div className={c.section__content}>
             <h2 className={c.section__title}>Contact</h2>
             <div className={clsx(c.grid, c.contact_grid)}>
+              <ContactCard
+                className={c.grid__item}
+                logo={<LogoDiscord />}
+                url="https://discord.gg/Bem5R8TKQP"
+                text="Dewiz Discord"
+              />
               <ContactCard
                 className={c.grid__item}
                 logo={<LogoTwitter />}
@@ -152,11 +158,3 @@ export default function Home() {
     </div>
   );
 }
-
-// import LogoDiscord from "../public/logo-discord.svg";
-// <ContactCard
-//   className={c.grid__item}
-//   logo={<LogoDiscord />}
-//   url="#"
-//   title="Discord"
-// />
