@@ -119,14 +119,6 @@ export default function Home() {
               />
               <TeamMemberCard
                 className={c.grid__item}
-                img={avatar0xcentur1on}
-                url="#"
-                name="0xcentur1on"
-                companyRole="Smart Contracts Engineer"
-                description="20+ years of experience in software engineering. Previously in banking and e-commerce. Ethereum fan. Tiktok addict."
-              />
-              <TeamMemberCard
-                className={c.grid__item}
                 img={avatar0xp3th1um}
                 url="#"
                 name="0xp3th1um"
