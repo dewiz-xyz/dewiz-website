@@ -58,6 +58,12 @@ export default function Home() {
               <h1 className="srOnly">Dewiz</h1>
               <h2 className={c.section__title}>DeFi Engineering Services</h2>
               <p>
+                We believe that financial inclusion is a basic human right.
+                Dewiz’s mission is to help “de-wizarding” DeFi, making it more
+                accessible to the “commoners”.
+              </p>
+              <p>
+                Dewiz provides engineering services to impactful DeFi projects.
                 We enable DeFi innovators to build on top of the main DeFi
                 protocols, providing technical expertise on both on-chain and
                 off-chain integrations that can save 1000s of hours in
@@ -73,9 +79,10 @@ export default function Home() {
             <h2 className={c.section__title}>About Us</h2>
             <p>
               We are buidlers! Dewiz co-founders are former MakerDAO Core Unit
-              contributors, with more than 1 year of hands-on experience with
-              the Maker Protocol and and 4+ years of experience in the broader
-              Ethereum ecosystem.
+              contributors, with 2+ years of hands-on experience with the Maker
+              Protocol &ndash; helping to keep the OG DeFi protocol, with 5B+
+              USD TVL, secure &ndash; and and 5+ years of experience in the
+              broader Ethereum ecosystem.
             </p>
             <p>
               Our team has expertise in smart contract engineering for EVM
