@@ -97,7 +97,7 @@ export default function Home() {
               url="https://twitter.com/amusingaxl"
               name="@amusingaxl"
               companyRole="Co-Founder"
-              description="8+ years of experience in software engineering and architecture.
+              description="9+ years of experience in software engineering and architecture.
                   Previously in banking, startups and web3 projects. Metal Head."
             />
             <TeamMemberCard
@@ -106,7 +106,7 @@ export default function Home() {
               url="https://twitter.com/0x3phemeralsoul"
               name="@0x3phemeralsoul"
               companyRole="Co-Founder"
-              description="10+ years of experience in product management. Previously in e-commerce, product manager at MakerDAO.
+              description="11+ years of experience in product management. Previously in e-commerce, product manager at MakerDAO.
                   DeFi addict."
             />
             <TeamMemberCard
@@ -115,12 +115,12 @@ export default function Home() {
               url="https://twitter.com/0xdecr1pto"
               name="0xdecr1pto"
               companyRole="Co-Founder"
-              description="7+ years of experience in software engineering, previously in web3 projects. Car Flipper."
+              description="8+ years of experience in software engineering, previously in web3 projects. Car Flipper."
             />
             <TeamMemberCard
               className={c.grid__item}
               img={avatar0xp3th1um}
-              url="#"
+              url="https://github.com/0xp3th1um"
               name="0xp3th1um"
               companyRole="Smart Contracts Engineer"
               description="6+ years of experience in software/smart-contract engineering for DeFi projects. Previously in academia. Music elitist."
