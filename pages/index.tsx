@@ -11,6 +11,7 @@ import avatarAmusingaxl from "../public/avatar-amusingaxl.png";
 import avatar0x3phemeralsoul from "../public/avatar-0x3phemeralsoul.png";
 import avatar0xdecr1pto from "../public/avatar-0xdecr1pto.png";
 import avatar0xp3th1um from "../public/avatar-0xp3th1um.png";
+import avatarOddaf from "../public/avatar-oddaf.png";
 import LogoDiscord from "../public/logo-discord.svg";
 import LogoTwitter from "../public/logo-twitter.svg";
 import LogoGithub from "../public/logo-github.svg";
@@ -124,6 +125,14 @@ export default function Home() {
               name="0xp3th1um"
               companyRole="Smart Contracts Engineer"
               description="6+ years of experience in software/smart-contract engineering for DeFi projects. Previously in academia. Music elitist."
+            />
+            <TeamMemberCard
+              className={c.grid__item}
+              img={avatarOddaf}
+              url="https://twitter.com/0x0ddaf"
+              name="Oddaf"
+              companyRole="Smart Contracts Engineer"
+              description="Solidity auditor/dev since 2017. DeFi builder. Previously in infosec for web2 companies. Avid motocyclist."
             />
           </div>
         </section>
