@@ -139,7 +139,7 @@ export default function Home() {
               url="https://twitter.com/0x0ddaf"
               name="Oddaf"
               companyRole="Smart Contracts Engineer"
-              description="Solidity auditor/dev since 2017. DeFi builder. Previously in infosec for web2 companies. Avid motocyclist."
+              description="Solidity auditor/dev since 2017. DeFi builder. Previously in infosec for web2 companies. Avid motorcyclist."
             />
           </div>
         </section>
