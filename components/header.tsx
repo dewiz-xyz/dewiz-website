@@ -32,18 +32,19 @@ export default function Header() {
           </nav>
           <nav className={c.mobile_nav} aria-label="Mobile navigation">
             <input id="toggle-nav" name="nav-state" type="radio" className={c.toggle} aria-hidden="true" />
+            <input id="close-nav" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" defaultChecked />
             <input id="close-nav-home" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" />
             <input id="close-nav-about" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" />
             <input id="close-nav-contact" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" />
-            
-            <label htmlFor="toggle-nav" className={c.toggle_label} role="button" aria-expanded="false" aria-controls="mobile-nav-menu">
+            <label className={c.toggle_label} htmlFor="toggle-nav" role="button" aria-expanded="false" aria-controls="mobile-nav-menu">
               <span className={c.hamburger}>
                 <span className={c.hamburger_line}></span>
                 <span className={c.hamburger_line}></span>
                 <span className={c.hamburger_line}></span>
               </span>
-              <span className="srOnly">Menu</span>
+              <span className="srOnly">Toggle Menu</span>
             </label>
+            <label className={c.close_label} htmlFor="close-nav"></label>
             <div className={c.toggle_content} id="mobile-nav-menu">
             <ul>
               <li>

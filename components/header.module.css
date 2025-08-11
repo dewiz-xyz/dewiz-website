@@ -149,6 +149,7 @@
   justify-content: center;
 }
 
+
 .hamburger {
   width: 24px;
   height: 18px;
@@ -166,6 +167,7 @@
   transform-origin: center;
 }
 
+
 /* Default state - menu hidden */
 .toggle_content {
   opacity: 0;
@@ -178,11 +180,6 @@
 /* Show menu when toggle is checked */
 .toggle:checked ~ .toggle_label {
   color: var(--fg-color-0);
-}
-
-/* Hide menu when any close toggle is checked */
-.close_toggle:checked ~ .toggle_label {
-  color: var(--fg-color-link);
 }
 
 /* Hamburger to X animation */
@@ -199,20 +196,6 @@
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* Reset hamburger when any close toggle is checked */
-.close_toggle:checked ~ .toggle_label .hamburger_line:nth-child(1) {
-  transform: none;
-}
-
-.close_toggle:checked ~ .toggle_label .hamburger_line:nth-child(2) {
-  opacity: 1;
-  transform: none;
-}
-
-.close_toggle:checked ~ .toggle_label .hamburger_line:nth-child(3) {
-  transform: none;
-}
-
 /**
  * Dirty hack to collapse the menu when clicking on anywhare on the page.
  * Make the toggle label to ocuppy the entire screen.
@@ -220,7 +203,15 @@
  * will still be clickable.
  */
 
-.toggle_label::before {
+.close_label {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.close_label::before {
   content: "";
   position: fixed;
   inset: 0;
@@ -231,14 +222,13 @@
   transition: background var(--duration) var(--timing);
 }
 
-.toggle:checked ~ .toggle_label::before {
-  background: hsla(var(--bg-color-0-hsl), 0.15);
+.toggle:checked ~ .close_label {
   pointer-events: initial;
 }
 
-.close_toggle:checked ~ .toggle_label::before {
-  background: transparent !important;
-  pointer-events: none !important;
+.toggle:checked ~ .close_label::before {
+  background: hsla(var(--bg-color-0-hsl), 0.15);
+  pointer-events: initial;
 }
 
 /* Show menu when toggle is checked and no close toggle is checked */
