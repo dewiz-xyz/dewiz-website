@@ -3,8 +3,10 @@ import LogoHatM from "../public/logo-hat-m.svg";
 import HatM from "../public/hat-m.svg";
 import HatS from "../public/hat-s.svg";
 import c from "./header.module.css";
+import { useState } from "react";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <>
       <header className={c.header}>
@@ -31,42 +33,35 @@ export default function Header() {
             </ul>
           </nav>
           <nav className={c.mobile_nav} aria-label="Mobile navigation">
-            <input id="toggle-nav" name="nav-state" type="radio" className={c.toggle} aria-hidden="true" />
-            <input id="close-nav" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" defaultChecked />
-            <input id="close-nav-home" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" />
-            <input id="close-nav-about" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" />
-            <input id="close-nav-contact" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" />
-            <label className={c.toggle_label} htmlFor="toggle-nav" role="button" aria-expanded="false" aria-controls="mobile-nav-menu">
-              <span className={c.hamburger}>
-                <span className={c.hamburger_line}></span>
-                <span className={c.hamburger_line}></span>
-                <span className={c.hamburger_line}></span>
-              </span>
+            <button
+              className={`${c.hamburger_button} ${isMenuOpen ? c.open : ''}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-nav-menu"
+            >
+              <span className={c.hamburger_line}></span>
+              <span className={c.hamburger_line}></span>
+              <span className={c.hamburger_line}></span>
               <span className="srOnly">Toggle Menu</span>
-            </label>
-            <label className={c.close_label} htmlFor="close-nav"></label>
-            <div className={c.toggle_content} id="mobile-nav-menu">
-            <ul>
-              <li>
-                <a href="#home" onClick={(e) => {
-                  const checkbox = document.getElementById('close-nav-home') as HTMLInputElement;
-                  if (checkbox) checkbox.checked = true;
-                }}>Home</a>
-              </li>
-              <li>
-                <a href="#about-us" onClick={(e) => {
-                  const checkbox = document.getElementById('close-nav-about') as HTMLInputElement;
-                  if (checkbox) checkbox.checked = true;
-                }}>About Us</a>
-              </li>
-              <li>
-                <a href="#contact" onClick={(e) => {
-                  const checkbox = document.getElementById('close-nav-contact') as HTMLInputElement;
-                  if (checkbox) checkbox.checked = true;
-                }}>Contact</a>
-              </li>
-            </ul>
-            </div>
+            </button>
+            {isMenuOpen && (
+              <>
+                <div className={c.overlay} onClick={() => setIsMenuOpen(false)}></div>
+                <div className={c.menu} id="mobile-nav-menu">
+                  <ul>
+                    <li>
+                      <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
+                    </li>
+                    <li>
+                      <a href="#about-us" onClick={() => setIsMenuOpen(false)}>About Us</a>
+                    </li>
+                    <li>
+                      <a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+                    </li>
+                  </ul>
+                </div>
+              </>
+            )}
           </nav>
         </div>
       </header>
