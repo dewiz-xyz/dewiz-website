@@ -20,10 +20,68 @@
   height: 128px;
 }
 
+@media (max-width: 1071.99px) {
+  .avatar svg {
+    height: 80px;
+  }
+}
+
+@media (max-width: 767.99px) {
+  .avatar svg {
+    height: 64px;
+  }
+}
+
+@media (max-width: 599.99px) {
+  .avatar svg {
+    height: 56px;
+  }
+}
+
+@media (max-width: 479.99px) {
+  .avatar svg {
+    height: 48px;
+  }
+}
+
+@media (max-width: 419.99px) {
+  .avatar svg {
+    height: 40px;
+  }
+}
+
+@media (max-width: 359.99px) {
+  .avatar svg {
+    height: 36px;
+  }
+}
+
+@media (max-width: 319.99px) {
+  .avatar svg {
+    height: 32px;
+  }
+}
+
 .text {
   color: var(--fg-color-link);
   font-weight: normal;
   margin-block-start: auto;
+}
+
+@media (max-width: 767.99px) {
+  .text {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 479.99px) {
+  .text {
+    font-size: 0;
+    line-height: 0;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
 }
 
 .card a:hover {

@@ -42,7 +42,7 @@
 }
 
 .home_logo__wrapper {
-  max-width: 546px;
+  max-width: 400px;
   margin: 0 auto var(--spacing-4);
 }
 
@@ -54,14 +54,51 @@
 
 @media (max-width: 767.99px) {
   .home_logo__wrapper {
-    max-width: 60%;
+    display: none;
+  }
+}
+
+.mobile_logo__wrapper {
+  display: none;
+  text-align: center;
+  margin: 0 auto var(--spacing-4);
+  width: 100%;
+}
+
+.mobile_logo__wrapper svg {
+  height: 4rem;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 767.99px) {
+  .mobile_logo__wrapper {
+    display: block;
+  }
+}
+
+@media (max-width: 479.99px) {
+  .mobile_logo__wrapper svg {
+    height: 3rem;
+  }
+}
+
+@media (max-width: 359.99px) {
+  .mobile_logo__wrapper svg {
+    height: 2.5rem;
   }
 }
 
 .team_grid {
   --columns: 3;
-  --gap: var(--spacing-8);
+  --gap: var(--spacing-16);
   --gap-count: calc(var(--columns) - 1);
+}
+
+@media (min-width: 1200px) {
+  .team_grid {
+    --gap: calc(var(--spacing-16) + var(--spacing-8));
+  }
 }
 
 .team_grid.grid__item {
@@ -71,12 +108,20 @@
 @media (max-width: 1071.99px) {
   .team_grid {
     --columns: 2;
+    --gap: var(--spacing-16);
   }
 }
 
 @media (max-width: 767.99px) {
   .team_grid {
     --columns: 1;
+    --gap: var(--spacing-16);
+  }
+}
+
+@media (max-width: 479.99px) {
+  .team_grid {
+    --gap: calc(var(--spacing-16) + var(--spacing-8));
   }
 }
 
@@ -91,28 +136,43 @@
   gap: var(--gap);
 }
 
+/* Force single row layout for ALL screen sizes */
+.contact_grid {
+  flex-wrap: nowrap !important;
+  gap: var(--spacing-2);
+}
+
+.contact_grid .grid__item {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  flex-basis: auto !important;
+}
+
 .contact_grid.grid__item {
   /* min-width: 192px; */
 }
 
 
-@media (max-width: 1071.99px) {
+/* Remove the 3-column override for medium screens */
+/* @media (max-width: 1071.99px) {
   .contact_grid {
     --columns: 3;
   }
-}
+} */
 
-@media (max-width: 767.99px) {
+/* Remove the 2-column override for small screens */
+/* @media (max-width: 767.99px) {
   .contact_grid {
     --columns: 2;
   }
-}
+} */
 
-@media (max-width: 419.99px) {
+/* Disable single column layout for mobile */
+/* @media (max-width: 419.99px) {
   .contact_grid {
     --columns: 1;
   }
-}
+} */
 
 .grid {
   display: flex;

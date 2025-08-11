@@ -1,8 +1,6 @@
 import { HTMLProps, ReactNode } from "react";
 import clsx from "clsx";
 import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
-import amusingAxlAvatar from "../public/avatar-amusingaxl.png";
 import c from "./contact-card.module.css";
 
 interface Props extends HTMLProps<HTMLDivElement> {
@@ -20,10 +18,10 @@ export default function ContactCard({
 }: Props) {
   return (
     <div {...props} className={clsx(c.card, className)}>
-      <picture className={c.avatar}>
+      <div className={c.avatar}>
         {logo}
         <Link href={url} className={c.text} target="_blank" rel="noreferrer noopener">{text}</Link>
-      </picture>
+      </div>
     </div>
   );
 }

@@ -211,3 +211,37 @@ svg [class*="fill-tertiary"] {
   height: 1px;
   overflow: hidden;
 }
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--bg-color-2);
+  color: var(--fg-color-0);
+  padding: 8px;
+  z-index: 1000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: var(--font-size-sm);
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/**
+ * Focus styles for keyboard navigation
+ */
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--fg-color-2);
+  outline-offset: 2px;
+}
+
+a:focus-visible {
+  text-decoration: underline;
+}

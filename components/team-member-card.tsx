@@ -2,7 +2,6 @@ import { HTMLProps } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
-import amusingAxlAvatar from "../public/avatar-amusingaxl.png";
 import c from "./team-member-card.module.css";
 
 interface PropsBase extends HTMLProps<HTMLDivElement> {
@@ -35,12 +34,12 @@ export default function TeamMemberCard({
 }: Props) {
   return (
     <div {...props} className={clsx(c.card, className)}>
-      <picture className={c.avatar}>
+      <div className={c.avatar}>
         <Image src={img} alt={name} />
         <h3 className={c.name}>
           <Link href={url} target="_blank" rel="noreferrer noopener">{name}</Link>
         </h3>
-      </picture>
+      </div>
       <div className={c.content}>
         <h4 className={c.role}>{companyRole}</h4>
         <p className={c.description}>

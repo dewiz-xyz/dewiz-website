@@ -7,6 +7,7 @@ import Footer from "../components/footer";
 import TeamMemberCard from "../components/team-member-card";
 import ContactCard from "../components/contact-card";
 import LogoHatL from "../public/logo-hat-l.svg";
+import LogoHatM from "../public/logo-hat-m.svg";
 import avatarAmusingaxl from "../public/avatar-amusingaxl.png";
 import avatar0x3phemeralsoul from "../public/avatar-0x3phemeralsoul.png";
 import avatar0xdecr1pto from "../public/avatar-0xdecr1pto.png";
@@ -22,6 +23,7 @@ import c from "./index.module.css";
 export default function Home() {
   return (
     <div className={c.root}>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <Head>
         <title>Dewiz | DeFi Engineering Services</title>
         <meta name="description" content="Dewiz | DeFi Engineering Services" />
@@ -49,13 +51,16 @@ export default function Home() {
         <meta name="theme-color" content="#001a1a" />
       </Head>
       <Header />
-      <Main className={c.main}>
+      <Main className={c.main} id="main-content">
         <section className={c.section}>
           <span className={c.anchor} id="home"></span>
           <div className={c.section__content}>
             <div className={c.content}>
               <div className={c.home_logo__wrapper}>
-                <LogoHatL />
+                <LogoHatL aria-label="Dewiz company logo" role="img" />
+              </div>
+              <div className={c.mobile_logo__wrapper}>
+                <LogoHatM aria-label="Dewiz company logo" role="img" />
               </div>
               <h1 className="srOnly">Dewiz</h1>
               <h2 className={c.section__title}>DeFi Engineering Services</h2>
@@ -160,19 +165,19 @@ export default function Home() {
             <div className={clsx(c.grid, c.contact_grid)}>
               <ContactCard
                 className={c.grid__item}
-                logo={<LogoDiscord />}
+                logo={<LogoDiscord aria-label="Discord" role="img" />}
                 url="https://discord.gg/Bem5R8TKQP"
                 text="Dewiz Discord"
               />
               <ContactCard
                 className={c.grid__item}
-                logo={<LogoX />}
+                logo={<LogoX aria-label="X (formerly Twitter)" role="img" />}
                 url="https://x.com/dewiz_xyz"
                 text="@dewiz_xyz"
               />
               <ContactCard
                 className={c.grid__item}
-                logo={<LogoGithub />}
+                logo={<LogoGithub aria-label="GitHub" role="img" />}
                 url="https://github.com/dewiz-xyz"
                 text="/dewiz-xyz"
               />

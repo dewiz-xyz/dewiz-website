@@ -11,13 +11,13 @@ export default function Header() {
         <div className={c.header__content}>
           <picture className={c.logo}>
             <Link href="/" className={c.logo__full}>
-              <LogoHatM />
+              <LogoHatM aria-label="Dewiz home" role="img" />
             </Link>
             <Link href="/" className={c.logo__hat_s}>
-              <HatS />
+              <HatS aria-label="Dewiz home" role="img" />
             </Link>
           </picture>
-          <nav className={c.nav}>
+          <nav className={c.nav} aria-label="Main navigation">
             <ul>
               <li>
                 <a href="#home">Home</a>
@@ -30,21 +30,36 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <nav className={c.mobile_nav}>
-            <input id="toggle-nav" type="checkbox" className={c.toggle} />
-            <label htmlFor="toggle-nav" className={c.toggle_label} tabIndex={0}>
-              Menu
+          <nav className={c.mobile_nav} aria-label="Mobile navigation">
+            <input id="toggle-nav" name="nav-state" type="radio" className={c.toggle} aria-hidden="true" />
+            <input id="close-nav-home" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" />
+            <input id="close-nav-about" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" />
+            <input id="close-nav-contact" name="nav-state" type="radio" className={c.close_toggle} aria-hidden="true" />
+            
+            <label htmlFor="toggle-nav" className={c.toggle_label} role="button" aria-expanded="false" aria-controls="mobile-nav-menu">
+              <span className={c.hamburger}>
+                <span className={c.hamburger_line}></span>
+                <span className={c.hamburger_line}></span>
+                <span className={c.hamburger_line}></span>
+              </span>
+              <span className="srOnly">Menu</span>
             </label>
-            <div className={c.toggle_content}>
+            <div className={c.toggle_content} id="mobile-nav-menu">
             <ul>
               <li>
-                <a href="#home">Home</a>
+                <a href="#home" onClick={(e) => {
+                  document.getElementById('close-nav-home').checked = true;
+                }}>Home</a>
               </li>
               <li>
-                <a href="#about-us">About Us</a>
+                <a href="#about-us" onClick={(e) => {
+                  document.getElementById('close-nav-about').checked = true;
+                }}>About Us</a>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact" onClick={(e) => {
+                  document.getElementById('close-nav-contact').checked = true;
+                }}>Contact</a>
               </li>
             </ul>
             </div>
