@@ -108,15 +108,18 @@
   position: relative;
 }
 
+.menu_toggle {
+  display: none;
+}
+
 .hamburger_button {
-  background: none;
-  border: none;
   cursor: pointer;
   padding: 8px;
   width: 40px;
   height: 40px;
   position: relative;
   z-index: 6;
+  display: block;
 }
 
 .hamburger_line {
@@ -143,29 +146,37 @@
   top: 24px;
 }
 
-.hamburger_button.open .hamburger_line:nth-child(1) {
+/* Hamburger animation when menu is open */
+.menu_toggle:checked ~ .hamburger_button .hamburger_line:nth-child(1) {
   transform: rotate(45deg);
   top: 18px;
 }
 
-.hamburger_button.open .hamburger_line:nth-child(2) {
+.menu_toggle:checked ~ .hamburger_button .hamburger_line:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger_button.open .hamburger_line:nth-child(3) {
+.menu_toggle:checked ~ .hamburger_button .hamburger_line:nth-child(3) {
   transform: rotate(-45deg);
   top: 18px;
 }
 
-.hamburger_button.open {
+.menu_toggle:checked ~ .hamburger_button {
   color: var(--fg-color-0);
 }
 
+/* Hide overlay and menu by default */
 .overlay {
   position: fixed;
   inset: 0;
   background: hsla(var(--bg-color-0-hsl), 0.15);
   z-index: 4;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
 }
 
 .menu {
@@ -173,6 +184,13 @@
   inset: 0 0 auto;
   padding: var(--spacing-4) var(--min-gutter);
   z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
 
   backdrop-filter: blur(10px);
   background: linear-gradient(
@@ -183,6 +201,18 @@
     var(--bg-overlay-menu);
 }
 
+/* Show overlay and menu when checkbox is checked */
+.menu_toggle:checked ~ .overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu_toggle:checked ~ .menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 .menu ul {
   display: grid;
   gap: var(--spacing-4);
@@ -190,6 +220,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.menu label {
+  display: block;
+  cursor: pointer;
 }
 
 .menu a {
