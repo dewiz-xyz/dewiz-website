@@ -48,17 +48,20 @@ export default function Header() {
             <ul>
               <li>
                 <a href="#home" onClick={(e) => {
-                  document.getElementById('close-nav-home').checked = true;
+                  const checkbox = document.getElementById('close-nav-home') as HTMLInputElement;
+                  if (checkbox) checkbox.checked = true;
                 }}>Home</a>
               </li>
               <li>
                 <a href="#about-us" onClick={(e) => {
-                  document.getElementById('close-nav-about').checked = true;
+                  const checkbox = document.getElementById('close-nav-about') as HTMLInputElement;
+                  if (checkbox) checkbox.checked = true;
                 }}>About Us</a>
               </li>
               <li>
                 <a href="#contact" onClick={(e) => {
-                  document.getElementById('close-nav-contact').checked = true;
+                  const checkbox = document.getElementById('close-nav-contact') as HTMLInputElement;
+                  if (checkbox) checkbox.checked = true;
                 }}>Contact</a>
               </li>
             </ul>
