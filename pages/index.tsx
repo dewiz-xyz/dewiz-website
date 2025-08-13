@@ -14,6 +14,7 @@ import avatar0xdecr1pto from "../public/avatar-0xdecr1pto.png";
 import avatarOddaf from "../public/avatar-oddaf.png";
 import avatar0xbasset from "../public/avatar-0xbasset.png";
 import avatar0xpedro from "../public/avatar-0xpedro.jpg";
+import avatar0xlaz3r from "../public/avatar-0xlaz3r.png";
 import LogoDiscord from "../public/logo-discord.svg";
 import LogoTwitter from "../public/logo-twitter.svg";
 import LogoX from "../public/logo-x.svg";
@@ -105,7 +106,7 @@ export default function Home() {
         </section>
         <section className={c.section}>
           <h2 className={c.section__title}>The Team</h2>
-          <div className={clsx(c.grid, c.team_grid)}>
+          <div className={clsx(c.grid, c.cofounders_grid)}>
             <TeamMemberCard
               className={c.grid__item}
               img={avatarAmusingaxl}
@@ -132,8 +133,10 @@ export default function Home() {
               companyRole="Co-Founder"
               description="10+ years of experience in software engineering, previously in web3 projects. Car Flipper."
             />
+          </div>
+          <div className={clsx(c.grid, c.team_grid)}>
             <TeamMemberCard
-              className={c.grid__item}
+              className={clsx(c.grid__item, c.team_member)}
               img={avatarOddaf}
               url="https://x.com/0x0ddaf"
               name="Oddaf"
@@ -141,7 +144,7 @@ export default function Home() {
               description="Solidity auditor/dev since 2017. DeFi builder. Previously in infosec for web2 companies. Avid motorcyclist."
             />
             <TeamMemberCard
-              className={c.grid__item}
+              className={clsx(c.grid__item, c.team_member)}
               img={avatar0xbasset}
               url="https://x.com/0xbasset"
               name="0xbasset"
@@ -149,12 +152,20 @@ export default function Home() {
               description="7+ years of experience in Solidity development and blockchain engineering. Pioneer in fully on-chain games during NFT boom. Fitness enthusiast."
             />
             <TeamMemberCard
-              className={c.grid__item}
+              className={clsx(c.grid__item, c.team_member)}
               img={avatar0xpedro}
               url="https://x.com/0xpedro_eth"
               name="0xpedro"
               companyRole="Smart Contracts / Backend Engineer"
               description="5+ years shipping smart contracts that secured $1b+ of TVL on the Ethereum ecosystem. Rust, Solidity, DeFi. Manga, anime and RPG lover."
+            />
+            <TeamMemberCard
+              className={clsx(c.grid__item, c.team_member)}
+              img={avatar0xlaz3r}
+              url="https://github.com/0xlaz3r"
+              name="0xLaz3r"
+              companyRole="Smart Contracts Engineer"
+              description="Shipping Solidity smart contracts for DeFi protocols since 2020. Background in robotics and former chess coach. The truth is… I am Iron Man."
             />
           </div>
         </section>
