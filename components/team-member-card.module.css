@@ -36,6 +36,18 @@
   font-size: var(--font-size-xs);
 }
 
+.description {
+  font-size: var(--font-size-sm);
+  line-height: 1.8;
+}
+
+@media (max-width: 767.99px) {
+  .description {
+    font-size: var(--font-size-xs);
+    line-height: 1.6;
+  }
+}
+
 .card a:hover {
   text-decoration: underline;
 }

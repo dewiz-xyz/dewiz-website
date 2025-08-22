@@ -96,6 +96,10 @@
   margin-bottom: var(--gap);
 }
 
+.cofounders_grid .grid__item h3 {
+  font-size: var(--font-size-sm);
+}
+
 @media (min-width: 1200px) {
   .cofounders_grid {
     --gap: calc(var(--spacing-16) + var(--spacing-8));
@@ -118,9 +122,6 @@
     font-size: var(--font-size-xs);
   }
   
-  .cofounders_grid .grid__item h3 {
-    font-size: var(--font-size-s);
-  }
 }
 
 @media (max-width: 900px) {
@@ -128,6 +129,17 @@
     --columns: 3;
     --gap: var(--spacing-8);
     margin-bottom: var(--spacing-8);
+  }
+  
+  .cofounders_grid.grid {
+    display: flex;
+    flex-wrap: nowrap !important;
+  }
+  
+  .cofounders_grid .grid__item {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    flex-basis: auto !important;
   }
   
   .cofounders_grid .grid__item img {
@@ -139,36 +151,60 @@
     font-size: var(--font-size-xs);
   }
   
-  .cofounders_grid .grid__item h3 {
-    font-size: var(--font-size-xs);
-  }
 }
 
 @media (max-width: 767.99px) {
+  .cofounders_grid {
+    --columns: 3;
+    --gap: var(--spacing-4);
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .cofounders_grid.grid {
+    display: flex;
+    flex-wrap: nowrap !important;
+  }
+  
+  .cofounders_grid .grid__item {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    flex-basis: auto !important;
+  }
+  
+  .cofounders_grid .grid__item img {
+    max-width: 72px !important;
+    max-height: 72px !important;
+  }
+  
+  .cofounders_grid .grid__item p {
+    font-size: var(--font-size-xs);
+  }
+  
+}
+
+@media (max-width: 479.99px) {
   .cofounders_grid {
     --columns: 1;
     --gap: var(--spacing-16);
     margin-bottom: var(--spacing-16);
   }
   
+  .cofounders_grid.grid {
+    flex-wrap: wrap !important;
+  }
+  
+  .cofounders_grid .grid__item {
+    flex-basis: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  
   .cofounders_grid .grid__item img {
-    max-width: 128px !important;
-    max-height: 128px !important;
+    max-width: 96px !important;
+    max-height: 96px !important;
   }
   
   .cofounders_grid .grid__item p {
-    font-size: inherit;
-  }
-  
-  .cofounders_grid .grid__item h3 {
-    font-size: inherit;
-  }
-}
-
-@media (max-width: 479.99px) {
-  .cofounders_grid {
-    --gap: calc(var(--spacing-16) + var(--spacing-8));
-    margin-bottom: calc(var(--spacing-16) + var(--spacing-8));
+    font-size: var(--font-size-xs);
   }
 }
 
@@ -183,6 +219,19 @@
 
 .team_grid .grid__item {
   flex-basis: calc((100% / var(--columns)) - (var(--gap) / var(--columns) * var(--gap-count)));
+}
+
+.team_member img {
+  max-width: 96px !important;
+  max-height: 96px !important;
+}
+
+.team_member h3 {
+  font-size: var(--font-size-sm);
+}
+
+.team_member p {
+  font-size: var(--font-size-sm);
 }
 
 @media (min-width: 1200px) {
@@ -210,7 +259,18 @@
     max-height: 80px !important;
   }
   
-  .team_member h3 {
+  .team_member p {
+    font-size: var(--font-size-xs);
+  }
+}
+
+@media (max-width: 900px) {
+  .team_member img {
+    max-width: 64px !important;
+    max-height: 64px !important;
+  }
+  
+  .team_member p {
     font-size: var(--font-size-xs);
   }
 }
@@ -232,12 +292,15 @@
     max-width: 96px !important;
     max-height: 96px !important;
   }
+  
+  .team_member p {
+    font-size: var(--font-size-xs);
+  }
 }
 
 @media (max-width: 479.99px) {
   .team_grid {
     --columns: 1;
-    --gap: calc(var(--spacing-16) + var(--spacing-8));
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap);
@@ -246,18 +309,13 @@
   .team_grid .grid__item {
     flex-basis: 100%;
   }
+  
+  .team_member p {
+    font-size: var(--font-size-xs);
+  }
 }
 
-.team_member img {
-  max-width: 96px !important;
-  max-height: 96px !important;
-}
-
-.team_member p {
-  font-size: var(--font-size-xs);
-}
-
-.contact_grid {
+.social_grid {
   --columns: 4;
   --gap: var(--spacing-8);
   --gap-count: calc(var(--columns) - 1);
@@ -269,39 +327,39 @@
 }
 
 /* Force single row layout for ALL screen sizes */
-.contact_grid {
+.social_grid {
   flex-wrap: nowrap !important;
   gap: var(--spacing-2);
 }
 
-.contact_grid .grid__item {
+.social_grid .grid__item {
   flex: 1 1 0 !important;
   min-width: 0 !important;
   flex-basis: auto !important;
 }
 
-.contact_grid.grid__item {
+.social_grid.grid__item {
   /* min-width: 192px; */
 }
 
 
 /* Remove the 3-column override for medium screens */
 /* @media (max-width: 1071.99px) {
-  .contact_grid {
+  .social_grid {
     --columns: 3;
   }
 } */
 
 /* Remove the 2-column override for small screens */
 /* @media (max-width: 767.99px) {
-  .contact_grid {
+  .social_grid {
     --columns: 2;
   }
 } */
 
 /* Disable single column layout for mobile */
 /* @media (max-width: 419.99px) {
-  .contact_grid {
+  .social_grid {
     --columns: 1;
   }
 } */

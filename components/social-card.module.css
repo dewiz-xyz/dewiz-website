@@ -68,13 +68,19 @@
   margin-block-start: auto;
 }
 
+@media (max-width: 1071.99px) {
+  .text {
+    font-size: var(--font-size-xs);
+  }
+}
+
 @media (max-width: 767.99px) {
   .text {
     font-size: var(--font-size-xs);
   }
 }
 
-@media (max-width: 479.99px) {
+@media (max-width: 599.99px) {
   .text {
     font-size: 0;
     line-height: 0;

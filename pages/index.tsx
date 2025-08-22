@@ -5,7 +5,7 @@ import Header from "../components/header";
 import Main from "../components/main";
 import Footer from "../components/footer";
 import TeamMemberCard from "../components/team-member-card";
-import ContactCard from "../components/contact-card";
+import SocialCard from "../components/social-card";
 import LogoHatL from "../public/logo-hat-l.svg";
 import LogoHatM from "../public/logo-hat-m.svg";
 import avatarAmusingaxl from "../public/avatar-amusingaxl.png";
@@ -19,6 +19,7 @@ import LogoDiscord from "../public/logo-discord.svg";
 import LogoTwitter from "../public/logo-twitter.svg";
 import LogoX from "../public/logo-x.svg";
 import LogoGithub from "../public/logo-github.svg";
+import LogoMirror from "../public/logo-mirror.svg";
 import c from "./index.module.css";
 
 export default function Home() {
@@ -111,7 +112,7 @@ export default function Home() {
               className={c.grid__item}
               img={avatarAmusingaxl}
               url="https://x.com/amusingaxl"
-              name="@amusingaxl"
+              name="AmusingAxl"
               companyRole="Co-Founder"
               description="11+ years of experience in software engineering and architecture.
                   Previously in banking, startups and web3 projects. Metal Head."
@@ -120,7 +121,7 @@ export default function Home() {
               className={c.grid__item}
               img={avatar0x3phemeralsoul}
               url="https://x.com/0x3phemeralsoul"
-              name="@0x3phemeralsoul"
+              name="Ephy"
               companyRole="Co-Founder"
               description="13+ years of experience in product management. Previously in e-commerce, product manager at MakerDAO.
                   DeFi addict."
@@ -170,23 +171,29 @@ export default function Home() {
           </div>
         </section>
         <section className={c.section}>
-          <span className={c.anchor} id="contact"></span>
+          <span className={c.anchor} id="social"></span>
           <div className={c.section__content}>
-            <h2 className={c.section__title}>Contact</h2>
-            <div className={clsx(c.grid, c.contact_grid)}>
-              <ContactCard
+            <h2 className={c.section__title}>Social</h2>
+            <div className={clsx(c.grid, c.social_grid)}>
+              <SocialCard
                 className={c.grid__item}
                 logo={<LogoDiscord aria-label="Discord" role="img" />}
                 url="https://discord.gg/Bem5R8TKQP"
                 text="Dewiz Discord"
               />
-              <ContactCard
+              <SocialCard
+                className={c.grid__item}
+                logo={<LogoMirror aria-label="Mirror Blog" role="img" />}
+                url="https://mirror.xyz/dewiz.xyz"
+                text="Dewiz Blog"
+              />
+              <SocialCard
                 className={c.grid__item}
                 logo={<LogoX aria-label="X (formerly Twitter)" role="img" />}
                 url="https://x.com/dewiz_xyz"
                 text="@dewiz_xyz"
               />
-              <ContactCard
+              <SocialCard
                 className={c.grid__item}
                 logo={<LogoGithub aria-label="GitHub" role="img" />}
                 url="https://github.com/dewiz-xyz"

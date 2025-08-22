@@ -26,7 +26,7 @@ export default function Header() {
                 <a href="#about-us">About Us</a>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="#social">Social</a>
               </li>
             </ul>
           </nav>
@@ -53,7 +53,7 @@ export default function Header() {
                 </li>
                 <li>
                   <label htmlFor="menu-toggle">
-                    <a href="#contact">Contact</a>
+                    <a href="#social">Social</a>
                   </label>
                 </li>
               </ul>

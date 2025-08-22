@@ -1,7 +1,7 @@
 import { HTMLProps, ReactNode } from "react";
 import clsx from "clsx";
 import Link from "next/link";
-import c from "./contact-card.module.css";
+import c from "./social-card.module.css";
 
 interface Props extends HTMLProps<HTMLDivElement> {
   logo: ReactNode;
@@ -9,7 +9,7 @@ interface Props extends HTMLProps<HTMLDivElement> {
   text: string;
 }
 
-export default function ContactCard({
+export default function SocialCard({
   logo,
   url,
   text,
