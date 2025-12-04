@@ -1,7 +1,7 @@
 import "normalize.css/normalize.css";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { Press_Start_2P } from "@next/font/google";
+import { Press_Start_2P } from "next/font/google";
 
 const ps2p = Press_Start_2P({
   weight: "400",
