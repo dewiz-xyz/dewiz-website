@@ -69,7 +69,7 @@ export default function Home() {
               <h2 className={c.section__title}>DeFi Engineering Services</h2>
               <p>
                 We believe that financial inclusion is a basic human right.
-                Dewiz’s mission is to help “de-wizarding” DeFi, making it more
+                Dewiz’s mission is to help “de-wizardrying” DeFi, making it more
                 accessible to the “commoners”.
               </p>
               <p>
