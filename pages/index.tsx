@@ -16,6 +16,7 @@ import avatar0xbasset from "../public/avatar-0xbasset.png";
 import avatar0xpedro from "../public/avatar-0xpedro.jpg";
 import avatar0xlaz3r from "../public/avatar-0xlaz3r.png";
 import avatarRiccardo from "../public/avatar-riccardo.png";
+import avatar0xcentur1on from "../public/avatar-0xcentur1on.png";
 import LogoDiscord from "../public/logo-discord.svg";
 import LogoTwitter from "../public/logo-twitter.svg";
 import LogoX from "../public/logo-x.svg";
@@ -174,6 +175,14 @@ export default function Home() {
               name="Riccardo"
               companyRole="Smart Contracts Engineer"
               description="8+ years in smart contracts. Polyhedric builder with no trust. Previously, solving problems across the web3 space. Voracious reader."
+            />
+            <TeamMemberCard
+              className={c.grid__item}
+              img={avatar0xcentur1on}
+              url="https://github.com/0xcentur1on"
+              name="0xCentur1on"
+              companyRole="Smart Contracts / Backend Engineer"
+              description="30+ years in software engineering. Previously in e-commerce and banking services. Shipping DeFi smart contracts since 2018. Golang, Solidity and Rust. &quot;Audentes Fortuna iuvat&quot;"
             />
           </div>
         </section>
