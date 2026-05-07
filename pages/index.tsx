@@ -47,7 +47,7 @@ export default function Home() {
         <div className={c.splitCards}>
           <article className={c.featureCard}>
             <span className={c.eyebrow}>dSolver</span>
-            <h3>Intent settlement and inventory infrastructure</h3>
+            <h3>Execution Engine: Intent settlement and inventory infrastructure</h3>
             <p>
               dSolver is Dewiz&apos;s solver business line for intent-based swap protocols. It combines
               routing algorithms with internal inventory strategy so independent solver operations
