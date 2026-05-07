@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: 14px;
   align-items: center;
   text-align: center;
 }
@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: 12px;
 }
 
 .avatar img {
@@ -27,29 +27,31 @@
 
 .name,
 .role {
-  color: var(--fg-color-link);
-  font-weight: normal;
+  color: var(--text-strong);
+  font-weight: 800;
 }
 
 .role {
-  margin-block-end: var(--spacing-4);
-  font-size: var(--font-size-xs);
+  margin-block-end: 12px;
+  color: var(--accent-cyan);
+  font-size: 0.78rem;
 }
 
 .description {
-  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-size: 0.9rem;
   line-height: 1.8;
 }
 
 @media (max-width: 767.99px) {
   .description {
-    font-size: var(--font-size-xs);
+    font-size: 0.86rem;
     line-height: 1.6;
   }
 }
 
 .card a:hover {
-  text-decoration: underline;
+  color: var(--accent-cyan);
 }
 
 .card a::after {
@@ -58,4 +60,3 @@
   inset: 0;
   z-index: 1;
 }
-

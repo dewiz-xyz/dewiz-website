@@ -1,111 +1,71 @@
 .header {
-  grid-area: header;
   position: sticky;
   top: 0;
-  z-index: 3;
-}
-
-.header__bg {
-  grid-area: header;
-  grid-column-start: 1;
-  grid-column-end: 4;
-
-  z-index: 2;
-  position: sticky;
-  top: 0;
-
-  backdrop-filter: blur(10px);
-  background: linear-gradient(
-      to bottom,
-      var(--bg-color-0-start) 0%,
-      transparent var(--header-height)
-    ),
-    hsla(var(--bg-color-0-hsl), 0.9);
-
-  --duration: 0.125s;
-  --timing: ease;
-  transition:
-    color var(--duration) var(--timing),
-    background-color var(--duration) var(--timing);
-  box-shadow: 0 1px 8px -4px var(--shadow-color);
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+  background: rgba(3, 23, 22, 0.82);
+  backdrop-filter: blur(16px);
 }
 
 .header__content {
   display: grid;
+  width: min(1180px, calc(100% - 40px));
   height: var(--header-height);
-  gap: var(--spacing-16);
-  padding: var(--spacing-4) 0;
-
+  margin: 0 auto;
   grid-template-columns: auto 1fr;
-  grid-template-areas: "logo nav";
   align-items: center;
-
-  position: relative;
-  z-index: 1;
+  gap: 28px;
 }
 
-.header a {
-  color: var(--fg-color-link);
-  font-size: var(--font-size-sm);
+.logo {
+  display: block;
 }
 
-.header a:hover {
-  text-decoration: underline;
+.logo a {
+  display: block;
 }
 
-.header ul {
+.logo svg {
+  height: 48px;
+  width: auto;
+}
+
+.logo__hat_s {
+  display: none !important;
+}
+
+.nav {
+  justify-self: end;
+}
+
+.nav ul,
+.menu ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.logo {
-  grid-area: logo;
-  transform: translateY(-10%);
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 
-.logo .logo__hat_s {
-  display: none;
+.nav a,
+.menu a {
+  color: var(--text-strong);
+  font-size: 0.92rem;
+  font-weight: 800;
 }
 
-.logo svg {
-  height: 3rem;
-}
-
-.logo > a {
-  display: block;
-}
-
-.nav {
-  grid-area: nav;
-  justify-self: end;
-}
-
-.nav > ul {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
-  gap: var(--spacing-16);
-}
-
-@media (max-width: 767.98px) {
-  .logo .logo__hat_s {
-    display: block;
-  }
-
-  .logo .logo__full {
-    display: none;
-  }
-
-  .logo svg {
-    height: 2rem;
-  }
+.nav a:hover,
+.menu a:hover {
+  color: var(--accent-cyan);
 }
 
 .mobile_nav {
   display: none;
-  margin-inline-start: auto;
-  position: relative;
+  justify-self: end;
 }
 
 .menu_toggle {
@@ -113,43 +73,42 @@
 }
 
 .hamburger_button {
-  cursor: pointer;
-  padding: 8px;
-  width: 40px;
-  height: 40px;
   position: relative;
-  z-index: 6;
+  z-index: 31;
   display: block;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
 }
 
 .hamburger_line {
+  position: absolute;
+  left: 9px;
+  display: block;
   width: 24px;
   height: 2px;
-  background-color: var(--fg-color-link);
-  transition: all 0.3s ease;
-  transform-origin: center;
-  display: block;
-  position: absolute;
-  left: 50%;
-  margin-left: -12px;
+  background: var(--text-strong);
+  transition:
+    top 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
 .hamburger_line:nth-child(1) {
-  top: 12px;
+  top: 13px;
 }
 
 .hamburger_line:nth-child(2) {
-  top: 18px;
+  top: 20px;
 }
 
 .hamburger_line:nth-child(3) {
-  top: 24px;
+  top: 27px;
 }
 
-/* Hamburger animation when menu is open */
 .menu_toggle:checked ~ .hamburger_button .hamburger_line:nth-child(1) {
+  top: 20px;
   transform: rotate(45deg);
-  top: 18px;
 }
 
 .menu_toggle:checked ~ .hamburger_button .hamburger_line:nth-child(2) {
@@ -157,93 +116,82 @@
 }
 
 .menu_toggle:checked ~ .hamburger_button .hamburger_line:nth-child(3) {
+  top: 20px;
   transform: rotate(-45deg);
-  top: 18px;
 }
 
-.menu_toggle:checked ~ .hamburger_button {
-  color: var(--fg-color-0);
-}
-
-/* Hide overlay and menu by default */
 .overlay {
   position: fixed;
   inset: 0;
-  background: hsla(var(--bg-color-0-hsl), 0.15);
-  z-index: 4;
-  opacity: 0;
+  z-index: 28;
   visibility: hidden;
-  cursor: pointer;
+  background: rgba(0, 0, 0, 0.42);
+  opacity: 0;
   transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
+    opacity 160ms ease,
+    visibility 160ms ease;
 }
 
 .menu {
   position: fixed;
   inset: 0 0 auto;
-  padding: var(--spacing-4) var(--min-gutter);
-  z-index: 5;
-  opacity: 0;
+  z-index: 30;
   visibility: hidden;
-  transform: translateY(-10px);
+  border-bottom: 1px solid var(--border);
+  background: rgba(3, 23, 22, 0.96);
+  opacity: 0;
+  padding: 92px 20px 24px;
+  transform: translateY(-8px);
   transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease,
-    transform 0.3s ease;
-
-  backdrop-filter: blur(10px);
-  background: linear-gradient(
-      to bottom,
-      var(--bg-color-0-start) 0%,
-      transparent var(--header-height)
-    ),
-    var(--bg-overlay-menu);
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 160ms ease;
 }
 
-/* Show overlay and menu when checkbox is checked */
-.menu_toggle:checked ~ .overlay {
-  opacity: 1;
+.menu_toggle:checked ~ .overlay,
+.menu_toggle:checked ~ .menu {
   visibility: visible;
+  opacity: 1;
 }
 
 .menu_toggle:checked ~ .menu {
-  opacity: 1;
-  visibility: visible;
   transform: translateY(0);
 }
 
 .menu ul {
   display: grid;
-  gap: var(--spacing-2);
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  gap: 8px;
 }
 
 .menu label {
   display: block;
-  cursor: pointer;
-  min-height: calc(var(--spacing-4) * 4);
-  position: relative;
 }
 
 .menu a {
-  display: flex;
-  position: absolute;
-  inset: 0;
-  text-decoration: none;
-  color: white;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+  background: var(--surface);
 }
 
-.menu a:hover {
-  text-decoration: underline;
-}
+@media (max-width: 760px) {
+  .header__content {
+    width: min(100% - 28px, 1180px);
+  }
 
-@media (max-width: 629.98px) {
+  .logo__full {
+    display: none !important;
+  }
+
+  .logo__hat_s {
+    display: block !important;
+  }
+
+  .logo svg {
+    height: 36px;
+  }
+
   .nav {
     display: none;
   }
