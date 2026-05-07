@@ -85,7 +85,7 @@ export default function Home() {
 
       <section className={c.ctaBand}>
         <span className={c.eyebrow}>Institutional DeFi infrastructure</span>
-        <h2>Bring Dewiz into your next protocol, solver, or governance initiative.</h2>
+        <h2>Bring Dewiz into your next protocol, liquidity execution, or governance initiative.</h2>
         <a className={c.buttonPrimary} href={mailto("Dewiz partnership inquiry")}>
           Contact partnerships
         </a>
