@@ -52,7 +52,7 @@ a {
 }
 
 :root {
-  --header-height: 86px;
+  --header-height: 64px;
   --font-body: var(--press-start-2p-font), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --font-display: var(--press-start-2p-font), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 

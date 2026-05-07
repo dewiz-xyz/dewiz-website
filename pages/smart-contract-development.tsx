@@ -16,12 +16,12 @@ const capabilities = [
 export default function SmartContractDevelopment() {
   return (
     <Layout
-      title="Smart Contract Development"
-      description="Dewiz provides EVM smart contract development, DeFi protocol engineering, and GovOps execution support."
+      title="Smart Contracts & Consulting"
+      description="Dewiz provides EVM smart contract development, DeFi protocol consulting, and GovOps execution support."
     >
       <section className={c.hero}>
         <div className={c.hero__copy}>
-          <span className={c.eyebrow}>Smart contract development and GovOps</span>
+          <span className={c.eyebrow}>Smart Contracts & Consulting</span>
           <h1>EVM engineering for protocols where correctness is not optional.</h1>
           <p>
             Dewiz has grown from smart contract development and consultancy for Sky, Maker, and
@@ -85,7 +85,7 @@ export default function SmartContractDevelopment() {
       </section>
 
       <section className={c.ctaBand}>
-        <span className={c.eyebrow}>Smart contract development</span>
+        <span className={c.eyebrow}>Smart Contracts & Consulting</span>
         <h2>Bring Dewiz into your protocol architecture, launch, or GovOps workflow.</h2>
         <a className={c.buttonPrimary} href={mailto("Smart contract development inquiry")}>
           Contact partnerships

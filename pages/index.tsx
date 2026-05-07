@@ -1,10 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import Layout from "../components/layout";
 import ProofMetrics from "../components/proof-metrics";
 import CaseStudyList from "../components/case-study-list";
 import { mailto } from "../data/site";
-import LogoHatL from "../public/logo-hat-l.svg";
 import c from "../styles/site.module.css";
 
 export default function Home() {
@@ -30,12 +28,6 @@ export default function Home() {
               Explore dSolver
             </Link>
           </div>
-        </div>
-        <div className={c.hero__visual} aria-label="Dewiz and dSolver brands">
-          <div className={c.dewizLogo}>
-            <LogoHatL aria-label="Dewiz logo" role="img" />
-          </div>
-          <Image className={c.dsolverLogo} src="/dsolver-logo.png" alt="dSolver logo" width={512} height={512} priority />
         </div>
       </section>
 
@@ -64,8 +56,8 @@ export default function Home() {
             <Link href="/dsolver">View dSolver</Link>
           </article>
           <article className={c.featureCard}>
-            <span className={c.eyebrow}>Smart contract development</span>
-            <h3>EVM engineering and protocol GovOps</h3>
+            <span className={c.eyebrow}>Smart Contracts & Consulting</span>
+            <h3>EVM engineering, consulting, and protocol GovOps</h3>
             <p>
               Dewiz designs, implements, reviews, and executes critical smart contract systems for
               Sky and other DeFi protocols, including governance operations for executive votes.

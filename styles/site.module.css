@@ -25,6 +25,11 @@
   align-content: center;
 }
 
+.hero__copy:only-child {
+  grid-column: 1 / -1;
+  max-width: 980px;
+}
+
 .hero__copy h1,
 .sectionHeader h2,
 .ctaBand h2 {

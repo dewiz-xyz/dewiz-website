@@ -1,11 +1,10 @@
 import Link from "next/link";
-import LogoHatM from "../public/logo-hat-m.svg";
 import HatS from "../public/hat-s.svg";
 import c from "./header.module.css";
 
 const navLinks = [
   { href: "/dsolver", label: "dSolver" },
-  { href: "/smart-contract-development", label: "Smart Contracts" },
+  { href: "/smart-contract-development", label: "Smart Contracts & Consulting" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -16,7 +15,7 @@ export default function Header() {
       <div className={c.header__content}>
         <picture className={c.logo}>
           <Link href="/" className={c.logo__full}>
-            <LogoHatM aria-label="Dewiz home" role="img" />
+            <HatS aria-label="Dewiz home" role="img" />
           </Link>
           <Link href="/" className={c.logo__hat_s}>
             <HatS aria-label="Dewiz home" role="img" />

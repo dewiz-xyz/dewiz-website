@@ -10,7 +10,7 @@ const contactRoutes = [
     href: mailto("dSolver partnership inquiry"),
   },
   {
-    title: "Smart contract development",
+    title: "Smart Contracts & Consulting",
     description:
       "For protocols, DAOs, and companies that need EVM engineering, reviews, integrations, or GovOps execution support.",
     href: mailto("Smart contract development inquiry"),
