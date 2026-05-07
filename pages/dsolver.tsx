@@ -40,8 +40,8 @@ export default function DSolver() {
             className={c.heroDiagram}
             src="/dsolver-execution-engine.png"
             alt="dSolver liquidity execution engine diagram"
-            width={1672}
-            height={941}
+            width={1536}
+            height={1024}
             priority
           />
         </div>
