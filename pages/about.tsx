@@ -39,7 +39,7 @@ export default function About() {
           <h1>A DeFi engineering team built around high-consequence systems.</h1>
           <p>
             Dewiz co-founders are former MakerDAO Core Unit contributors who have contributed to
-            Sky and Maker protocol work since 2021 and to the broader Ethereum ecosystem since
+            Sky and MakerDAO protocol work since 2021 and to the broader Ethereum ecosystem since
             2018. The team combines smart contract engineering, backend systems, product delivery,
             integrations, and governance operations.
           </p>
