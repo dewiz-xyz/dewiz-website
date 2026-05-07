@@ -64,8 +64,8 @@ export default function Home() {
             <Link href="/dsolver">View dSolver</Link>
           </article>
           <article className={c.featureCard}>
-            <span className={c.eyebrow}>Smart contract development</span>
-            <h3>EVM engineering and protocol GovOps</h3>
+            <span className={c.eyebrow}>Smart Contracts & Consulting</span>
+            <h3>EVM engineering, consulting, and protocol GovOps</h3>
             <p>
               Dewiz designs, implements, reviews, and executes critical smart contract systems for
               Sky and other DeFi protocols, including governance operations for executive votes.

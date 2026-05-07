@@ -28,7 +28,7 @@ export default function Footer() {
       <div className={c.footer__bottom}>
         <nav aria-label="Footer navigation">
           <Link href="/dsolver">dSolver</Link>
-          <Link href="/smart-contract-development">Smart Contracts</Link>
+          <Link href="/smart-contract-development">Smart Contracts & Consulting</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>
