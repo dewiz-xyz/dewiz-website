@@ -14,20 +14,32 @@
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 24px;
-  transition: height 160ms ease;
+  transition: height 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .logo {
-  display: block;
+  display: grid;
+  width: 321px;
+  height: 50px;
+  align-items: center;
+  transition:
+    width 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    height 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .logo a {
   display: block;
+  grid-area: 1 / 1;
+  transform-origin: left center;
+  transition:
+    opacity 260ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 260ms ease;
 }
 
 .logo svg {
   width: auto;
-  transition: height 160ms ease;
+  transition: height 320ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .logo__full svg {
@@ -40,19 +52,33 @@
 }
 
 .logo__hat_s {
-  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-8px) scale(0.92);
+  visibility: hidden;
 }
 
 .header_compact .header__content {
   height: var(--header-height);
 }
 
+.header_compact .logo {
+  width: 51px;
+  height: 34px;
+}
+
 .header_compact .logo__full {
-  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-8px) scale(0.96);
+  visibility: hidden;
 }
 
 .header_compact .logo__hat_s {
-  display: block !important;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1);
+  visibility: visible;
 }
 
 .nav {
@@ -209,6 +235,16 @@
 @media (max-width: 760px) {
   .header__content {
     width: min(100% - 28px, 1180px);
+  }
+
+  .logo {
+    width: 270px;
+    height: 42px;
+  }
+
+  .header_compact .logo {
+    width: 45px;
+    height: 30px;
   }
 
   .logo__full svg {
