@@ -10,42 +10,44 @@ export default function DSolver() {
       title="dSolver"
       description="dSolver is Dewiz's institutional solver and inventory infrastructure business line for intent-based DeFi markets."
     >
-      <section className={c.hero}>
+      <section className={`${c.hero} ${c.heroMediaHero}`}>
         <div className={c.hero__copy}>
           <span className={c.eyebrow}>Solver infrastructure</span>
-          <h1>dSolver brings institutional inventory discipline to intent settlement.</h1>
-          <p>
-            dSolver is Dewiz&apos;s solver business line, launching first around CoW-style intent flow
-            and expanding toward other swap and cross-chain intent protocols. The objective is to
-            win competitive order flow through stronger routing, disciplined inventory management,
-            and protocol-native execution.
-          </p>
-          <div className={c.actions}>
-            <a className={c.buttonPrimary} href={mailto("dSolver partnership inquiry")}>
-              Discuss dSolver
-            </a>
-            <a
-              className={c.buttonSecondary}
-              href="https://github.com/dewiz-xyz/dsolver-rfq-prospectus-single-page/blob/master/docs/dSolver_Prospectus.md"
-              target="_blank"
-              rel="noreferrer noopener"
+          <div className={c.heroLandscape}>
+            <video
+              className={c.heroDiagram}
+              aria-label="dSolver liquidity execution engine animated diagram"
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster="/dsolver-execution-engine.png"
             >
-              View public materials
-            </a>
+              <source src="/dsolver-execution-engine.mp4" type="video/mp4" />
+            </video>
           </div>
-        </div>
-        <div className={c.hero__visual}>
-          <video
-            className={c.heroDiagram}
-            aria-label="dSolver liquidity execution engine animated diagram"
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/dsolver-execution-engine.png"
-          >
-            <source src="/dsolver-execution-engine.mp4" type="video/mp4" />
-          </video>
+          <div className={c.heroTextBlock}>
+            <h1>dSolver brings institutional inventory discipline to intent settlement.</h1>
+            <p>
+              dSolver is Dewiz&apos;s solver business line, launching first around CoW-style intent flow
+              and expanding toward other swap and cross-chain intent protocols. The objective is to
+              win competitive order flow through stronger routing, disciplined inventory management,
+              and protocol-native execution.
+            </p>
+            <div className={c.actions}>
+              <a className={c.buttonPrimary} href={mailto("dSolver partnership inquiry")}>
+                Discuss dSolver
+              </a>
+              <a
+                className={c.buttonSecondary}
+                href="https://github.com/dewiz-xyz/dsolver-rfq-prospectus-single-page/blob/master/docs/dSolver_Prospectus.md"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                View public materials
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
