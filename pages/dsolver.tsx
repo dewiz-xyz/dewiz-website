@@ -34,7 +34,7 @@ export default function DSolver() {
             </a>
           </div>
         </div>
-        <div className={c.hero__visual}>
+        <div className={`${c.hero__visual} ${c.heroVisualClean}`}>
           <video
             className={c.heroDiagram}
             aria-label="dSolver liquidity execution engine animated diagram"

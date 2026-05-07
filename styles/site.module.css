@@ -134,6 +134,10 @@
   pointer-events: none;
 }
 
+.heroVisualClean::before {
+  content: none;
+}
+
 .dewizLogo {
   position: relative;
   width: min(420px, 76%);
@@ -167,7 +171,19 @@
   max-width: 100%;
   height: auto;
   mix-blend-mode: screen;
-  filter: drop-shadow(0 0 26px rgba(16, 178, 226, 0.16));
+  filter: contrast(1.25) saturate(1.08) drop-shadow(0 0 26px rgba(16, 178, 226, 0.14));
+  -webkit-mask-image: radial-gradient(
+    ellipse 74% 66% at 52% 50%,
+    #000 0 68%,
+    rgba(0, 0, 0, 0.84) 78%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 74% 66% at 52% 50%,
+    #000 0 68%,
+    rgba(0, 0, 0, 0.84) 78%,
+    transparent 100%
+  );
 }
 
 video.heroDiagram {
