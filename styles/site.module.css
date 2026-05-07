@@ -164,6 +164,10 @@
   filter: drop-shadow(0 0 30px rgba(16, 178, 226, 0.18));
 }
 
+video.heroDiagram {
+  display: block;
+}
+
 .heroPanel {
   position: relative;
   display: grid;
