@@ -25,9 +25,27 @@
   align-content: center;
 }
 
+.heroMediaHero {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: auto;
+  align-items: start;
+  padding: clamp(34px, 6vw, 72px) 0 clamp(48px, 7vw, 90px);
+}
+
+.heroMediaHero .hero__copy {
+  max-width: none;
+  gap: 18px;
+}
+
 .hero__copy:only-child {
   grid-column: 1 / -1;
   max-width: 980px;
+}
+
+.heroTextBlock {
+  display: grid;
+  max-width: 980px;
+  gap: 20px;
 }
 
 .hero__copy h1,
@@ -160,15 +178,44 @@
 .heroDiagram {
   position: relative;
   z-index: 1;
-  width: min(116%, 760px);
-  max-width: none;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
   mix-blend-mode: screen;
   filter: drop-shadow(0 0 26px rgba(16, 178, 226, 0.16));
 }
 
 video.heroDiagram {
   display: block;
+}
+
+.heroLandscape {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.heroLandscape::before {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 50% 54%, rgba(16, 178, 226, 0.22), transparent 42%),
+    radial-gradient(circle at 78% 58%, rgba(255, 197, 44, 0.1), transparent 28%);
+}
+
+.heroLandscape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--bg) 0%, transparent 10%, transparent 90%, var(--bg) 100%),
+    linear-gradient(180deg, var(--bg) 0%, transparent 12%, transparent 82%, var(--bg) 100%);
+  pointer-events: none;
 }
 
 .heroPanel {
