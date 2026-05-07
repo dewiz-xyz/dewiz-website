@@ -22,7 +22,7 @@ export const SOCIAL_LINKS = [
 export const PROOF_METRICS = [
   {
     value: "Since 2021",
-    label: "Sky/Maker protocol engineering",
+    label: "Sky/MakerDAO protocol engineering",
     description:
       "Dewiz contributors have supported core Sky and Maker protocol work across engineering, integrations, and governance execution.",
   },
