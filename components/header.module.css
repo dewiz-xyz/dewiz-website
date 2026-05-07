@@ -9,11 +9,12 @@
 .header__content {
   display: grid;
   width: min(1180px, calc(100% - 40px));
-  height: var(--header-height);
+  height: 86px;
   margin: 0 auto;
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 24px;
+  transition: height 160ms ease;
 }
 
 .logo {
@@ -25,12 +26,33 @@
 }
 
 .logo svg {
+  width: auto;
+  transition: height 160ms ease;
+}
+
+.logo__full svg {
+  height: 50px;
+}
+
+.logo__hat_s svg {
   height: 34px;
   width: auto;
 }
 
 .logo__hat_s {
   display: none !important;
+}
+
+.header_compact .header__content {
+  height: var(--header-height);
+}
+
+.header_compact .logo__full {
+  display: none !important;
+}
+
+.header_compact .logo__hat_s {
+  display: block !important;
 }
 
 .nav {
@@ -189,7 +211,11 @@
     width: min(100% - 28px, 1180px);
   }
 
-  .logo svg {
+  .logo__full svg {
+    height: 42px;
+  }
+
+  .logo__hat_s svg {
     height: 30px;
   }
 

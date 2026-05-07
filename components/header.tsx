@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import LogoHatM from "../public/logo-hat-m.svg";
 import HatS from "../public/hat-s.svg";
 import c from "./header.module.css";
 
@@ -10,12 +12,27 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const [isCompact, setIsCompact] = useState(false);
+
+  useEffect(() => {
+    const updateHeader = () => {
+      setIsCompact(window.scrollY > 8);
+    };
+
+    updateHeader();
+    window.addEventListener("scroll", updateHeader, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", updateHeader);
+    };
+  }, []);
+
   return (
-    <header className={c.header}>
+    <header className={`${c.header} ${isCompact ? c.header_compact : ""}`}>
       <div className={c.header__content}>
         <picture className={c.logo}>
           <Link href="/" className={c.logo__full}>
-            <HatS aria-label="Dewiz home" role="img" />
+            <LogoHatM aria-label="Dewiz home" role="img" />
           </Link>
           <Link href="/" className={c.logo__hat_s}>
             <HatS aria-label="Dewiz home" role="img" />
