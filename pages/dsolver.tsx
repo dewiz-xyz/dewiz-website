@@ -36,7 +36,14 @@ export default function DSolver() {
           </div>
         </div>
         <div className={c.hero__visual}>
-          <Image className={c.heroBadge} src="/dsolver-logo.png" alt="dSolver logo" width={512} height={512} priority />
+          <Image
+            className={c.heroDiagram}
+            src="/dsolver-execution-engine.png"
+            alt="dSolver liquidity execution engine diagram"
+            width={1672}
+            height={941}
+            priority
+          />
         </div>
       </section>
 
