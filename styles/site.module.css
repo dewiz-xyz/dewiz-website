@@ -118,21 +118,16 @@
   display: grid;
   place-items: center;
   min-height: auto;
-  padding: 12px;
-  border: 2px solid var(--border);
-  background:
-    linear-gradient(rgba(255, 197, 44, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 197, 44, 0.08) 1px, transparent 1px),
-    var(--surface);
-  background-size: 18px 18px;
-  box-shadow: var(--shadow);
+  overflow: visible;
 }
 
 .hero__visual::before {
   content: "";
   position: absolute;
-  inset: 12px;
-  border: 2px dashed rgba(183, 239, 255, 0.35);
+  inset: -10%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(16, 178, 226, 0.14), transparent 42%),
+    radial-gradient(circle at 78% 50%, rgba(255, 197, 44, 0.08), transparent 28%);
   pointer-events: none;
 }
 
@@ -165,10 +160,11 @@
 .heroDiagram {
   position: relative;
   z-index: 1;
-  width: 100%;
+  width: min(116%, 760px);
+  max-width: none;
   height: auto;
-  border: 2px solid var(--border);
-  box-shadow: var(--shadow);
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 26px rgba(16, 178, 226, 0.16));
 }
 
 .heroPanel {
