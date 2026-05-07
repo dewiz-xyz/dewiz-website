@@ -117,7 +117,8 @@
   position: relative;
   display: grid;
   place-items: center;
-  min-height: 420px;
+  min-height: auto;
+  padding: 12px;
   border: 2px solid var(--border);
   background:
     linear-gradient(rgba(255, 197, 44, 0.08) 1px, transparent 1px),
@@ -130,8 +131,9 @@
 .hero__visual::before {
   content: "";
   position: absolute;
-  inset: 18px;
+  inset: 12px;
   border: 2px dashed rgba(183, 239, 255, 0.35);
+  pointer-events: none;
 }
 
 .dewizLogo {
@@ -155,6 +157,15 @@
   position: relative;
   z-index: 1;
   width: min(410px, 82%);
+  height: auto;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.heroDiagram {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   height: auto;
   border: 2px solid var(--border);
   box-shadow: var(--shadow);
@@ -437,7 +448,7 @@
   }
 
   .hero__visual {
-    min-height: 300px;
+    min-height: auto;
   }
 
   .hero__copy h1 {
