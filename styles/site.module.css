@@ -19,12 +19,22 @@
   padding: clamp(48px, 8vw, 112px) 0;
 }
 
+.heroTextHero {
+  min-height: auto;
+  grid-template-columns: minmax(0, 1fr);
+  padding: clamp(48px, 7vw, 88px) 0 clamp(18px, 3vw, 36px);
+}
+
 .hero__copy {
   position: relative;
   z-index: 2;
   display: grid;
   gap: 22px;
   align-content: center;
+}
+
+.heroTextHero .hero__copy {
+  max-width: 1080px;
 }
 
 .hero__copy h1,
@@ -117,8 +127,7 @@
   place-items: center;
   min-height: auto;
   min-width: 0;
-  overflow: visible;
-  transform: translateX(clamp(0px, 3vw, 40px));
+  overflow: hidden;
 }
 
 .hero__visual::before {
@@ -165,8 +174,8 @@
 .heroDiagram {
   position: relative;
   z-index: 1;
-  width: min(150%, 920px);
-  max-width: none;
+  width: min(100%, 680px);
+  max-width: 100%;
   height: auto;
   mix-blend-mode: screen;
   filter: contrast(1.25) saturate(1.08) drop-shadow(0 0 30px rgba(16, 178, 226, 0.14));
@@ -186,6 +195,35 @@
 
 video.heroDiagram {
   display: block;
+}
+
+.executionBand {
+  position: relative;
+  width: min(1340px, calc(100vw - 24px));
+  margin: 0 calc(50% - 50vw) clamp(54px, 7vw, 96px);
+  margin-left: max(calc(50% - 670px), 12px);
+  aspect-ratio: 16 / 7;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.executionBand::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, var(--bg) 0%, transparent 10%, transparent 90%, var(--bg) 100%),
+    linear-gradient(180deg, var(--bg) 0%, transparent 14%, transparent 82%, var(--bg) 100%);
+  pointer-events: none;
+}
+
+.executionBand__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  filter: contrast(1.2) saturate(1.08) drop-shadow(0 0 30px rgba(16, 178, 226, 0.13));
 }
 
 .heroPanel {
@@ -416,7 +454,6 @@ video.heroDiagram {
 }
 
 @media (max-width: 980px) {
-  .hero,
   .metricGrid,
   .splitCards,
   .textGrid,
@@ -424,21 +461,11 @@ video.heroDiagram {
     grid-template-columns: 1fr 1fr;
   }
 
-  .hero {
-    min-height: auto;
-  }
-
-  .hero__copy {
-    grid-column: 1 / -1;
-  }
-
-  .hero__visual {
-    transform: none;
-  }
-
-  .heroDiagram {
-    width: min(100%, 760px);
-    max-width: 100%;
+  .executionBand {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    aspect-ratio: 16 / 8.5;
   }
 }
 
