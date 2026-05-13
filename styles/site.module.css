@@ -53,18 +53,18 @@
 .ctaBand p {
   margin: 0;
   color: var(--text-muted);
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: 1.12rem;
+  line-height: 1.72;
 }
 
 .hero__copy p {
   max-width: 760px;
-  font-size: clamp(1.12rem, 1.5vw, 1.34rem);
+  font-size: clamp(1.16rem, 1.5vw, 1.38rem);
 }
 
 .eyebrow {
   color: var(--accent-gold);
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -86,7 +86,7 @@
   justify-content: center;
   border-radius: 8px;
   padding: 0 18px;
-  font-size: 1rem;
+  font-size: 1.04rem;
   font-weight: 800;
   transition:
     transform 150ms ease,
@@ -293,7 +293,7 @@ video.heroDiagram {
 }
 
 .metricCard p {
-  font-size: 1rem;
+  font-size: 1.04rem;
   line-height: 1.65;
 }
 
@@ -309,7 +309,7 @@ video.heroDiagram {
 .caseCard h3,
 .textGrid h3 {
   margin: 0;
-  font-size: 1.42rem;
+  font-size: 1.48rem;
   line-height: 1.25;
 }
 
@@ -361,7 +361,7 @@ video.heroDiagram {
 .notice h2 {
   margin: 0;
   color: var(--accent-gold);
-  font-size: 1.14rem;
+  font-size: 1.2rem;
 }
 
 .checkGrid article {
