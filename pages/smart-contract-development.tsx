@@ -7,7 +7,7 @@ import c from "../styles/site.module.css";
 const capabilities = [
   "EVM protocol architecture and smart contract implementation",
   "Specification-driven development for capital-sensitive systems",
-  "Governance spell design, review, and on-chain execution support",
+  "Governance on-chain vote design, review, and execution support",
   "Security-focused test suites, reviews, formal verification coordination, and audit readiness",
   "On-chain and off-chain integrations for protocol operations",
   "Operational support for production DeFi systems after launch",
