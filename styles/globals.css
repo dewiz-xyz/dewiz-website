@@ -118,7 +118,7 @@ svg [class*="fill-tertiary"] {
   background: var(--surface);
   color: var(--text-strong);
   padding: 10px 12px;
-  font-size: 0.65rem;
+  font-size: 0.78rem;
   transition: top 0.2s ease;
 }
 

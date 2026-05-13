@@ -33,26 +33,26 @@
 }
 
 .name {
-  font-size: 0.68rem;
+  font-size: 0.82rem;
   line-height: 1.6;
 }
 
 .role {
   margin-block-end: 12px;
   color: var(--accent-gold);
-  font-size: 0.52rem;
+  font-size: 0.68rem;
   line-height: 1.8;
 }
 
 .description {
   color: var(--text-muted);
-  font-size: 0.56rem;
-  line-height: 2;
+  font-size: 0.76rem;
+  line-height: 1.85;
 }
 
 @media (max-width: 767.99px) {
   .description {
-    font-size: 0.56rem;
+    font-size: 0.76rem;
     line-height: 1.9;
   }
 }

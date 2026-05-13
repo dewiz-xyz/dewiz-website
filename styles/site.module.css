@@ -58,8 +58,8 @@
 .ctaBand p {
   margin: 0;
   color: var(--text-muted);
-  font-size: 0.74rem;
-  line-height: 2.15;
+  font-size: 0.88rem;
+  line-height: 1.95;
 }
 
 .hero__copy p {
@@ -68,8 +68,8 @@
 
 .eyebrow {
   color: var(--accent-gold);
-  font-size: 0.6rem;
-  line-height: 1.8;
+  font-size: 0.72rem;
+  line-height: 1.7;
   text-transform: uppercase;
 }
 
@@ -89,7 +89,7 @@
   justify-content: center;
   border: 2px solid var(--border);
   padding: 0 16px;
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   line-height: 1.45;
   transition:
     transform 120ms ease,
@@ -210,8 +210,8 @@ video.heroDiagram {
 
 .heroPanel li {
   color: var(--text);
-  font-size: 0.7rem;
-  line-height: 2;
+  font-size: 0.84rem;
+  line-height: 1.85;
 }
 
 .heroPanel li::before {
@@ -233,7 +233,7 @@ video.heroDiagram {
 
 .sectionHeader h2,
 .ctaBand h2 {
-  font-size: clamp(1.1rem, 3vw, 2.2rem);
+  font-size: clamp(1.3rem, 3vw, 2.35rem);
   line-height: 1.45;
 }
 
@@ -296,13 +296,13 @@ video.heroDiagram {
 }
 
 .metricCard span {
-  font-size: 0.68rem;
-  line-height: 1.8;
+  font-size: 0.82rem;
+  line-height: 1.7;
 }
 
 .metricCard p {
-  font-size: 0.62rem;
-  line-height: 2;
+  font-size: 0.78rem;
+  line-height: 1.85;
 }
 
 .featureCard,
@@ -317,8 +317,8 @@ video.heroDiagram {
 .caseCard h3,
 .textGrid h3 {
   margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.8;
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 .featureCard a,
@@ -330,8 +330,8 @@ video.heroDiagram {
   width: fit-content;
   border-bottom: 2px solid var(--accent-gold);
   color: var(--accent-gold);
-  font-size: 0.64rem;
-  line-height: 1.8;
+  font-size: 0.78rem;
+  line-height: 1.7;
 }
 
 .caseCard {
@@ -362,7 +362,7 @@ video.heroDiagram {
   color: var(--text-strong);
   background: var(--surface);
   box-shadow: 3px 3px 0 #001010;
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   line-height: 1.6;
 }
 
@@ -376,8 +376,8 @@ video.heroDiagram {
 .notice h2 {
   margin: 0;
   color: var(--accent-gold);
-  font-size: 0.8rem;
-  line-height: 1.8;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 .checkGrid article {
@@ -396,14 +396,14 @@ video.heroDiagram {
   border: 2px solid var(--accent-gold);
   color: var(--accent-gold);
   background: #001010;
-  font-size: 0.65rem;
+  font-size: 0.76rem;
 }
 
 .checkGrid p {
   margin: 0;
   color: var(--text);
-  font-size: 0.68rem;
-  line-height: 2;
+  font-size: 0.82rem;
+  line-height: 1.85;
 }
 
 .ctaBand {
