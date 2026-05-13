@@ -117,7 +117,8 @@
   place-items: center;
   min-height: auto;
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
+  transform: translateX(clamp(0px, 1.5vw, 22px));
 }
 
 .hero__visual::before {
@@ -164,8 +165,8 @@
 .heroDiagram {
   position: relative;
   z-index: 1;
-  width: min(100%, 680px);
-  max-width: 100%;
+  width: min(118%, 790px);
+  max-width: none;
   height: auto;
   mix-blend-mode: screen;
   filter: contrast(1.25) saturate(1.08) drop-shadow(0 0 30px rgba(16, 178, 226, 0.14));
@@ -429,6 +430,15 @@ video.heroDiagram {
 
   .hero__copy {
     grid-column: 1 / -1;
+  }
+
+  .hero__visual {
+    transform: none;
+  }
+
+  .heroDiagram {
+    width: min(100%, 740px);
+    max-width: 100%;
   }
 }
 
