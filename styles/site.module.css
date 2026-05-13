@@ -334,12 +334,48 @@ video.heroDiagram {
   display: inline-flex;
   min-height: 42px;
   align-items: center;
+  gap: 8px;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 0 14px;
   color: var(--text-strong);
   background: var(--surface);
   font-weight: 800;
+}
+
+.tokenList span {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 154px;
+  padding: 11px 14px;
+}
+
+.tokenList strong,
+.tokenList small {
+  line-height: 1.25;
+}
+
+.tokenList strong {
+  font-size: 1.02rem;
+}
+
+.tokenList small {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
+
+.tokenList__active {
+  border-color: var(--accent-cyan) !important;
+  background: rgba(16, 178, 226, 0.12) !important;
+}
+
+.tokenList__active small {
+  color: var(--accent-cyan);
+}
+
+.tokenList__soon {
+  opacity: 0.55;
 }
 
 .notice {

@@ -82,7 +82,13 @@ export default function DSolver() {
         </div>
         <div className={c.tokenList}>
           {PROTOCOL_ROADMAP.map((protocol) => (
-            <span key={protocol}>{protocol}</span>
+            <span
+              className={protocol.status === "Enabled now" ? c.tokenList__active : c.tokenList__soon}
+              key={protocol.name}
+            >
+              <strong>{protocol.name}</strong>
+              <small>{protocol.status}</small>
+            </span>
           ))}
         </div>
       </section>
