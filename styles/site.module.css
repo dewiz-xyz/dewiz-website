@@ -348,6 +348,7 @@ video.heroDiagram {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
+  gap: 9px;
   border: 2px solid var(--border);
   padding: 0 13px;
   color: var(--text-strong);
@@ -355,6 +356,42 @@ video.heroDiagram {
   box-shadow: 3px 3px 0 #001010;
   font-size: 0.84rem;
   line-height: 1.6;
+}
+
+.tokenList span {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 150px;
+  padding: 10px 13px;
+}
+
+.tokenList strong,
+.tokenList small {
+  line-height: 1.35;
+}
+
+.tokenList strong {
+  font-size: 0.88rem;
+}
+
+.tokenList small {
+  color: var(--text-muted);
+  font-size: 0.68rem;
+}
+
+.tokenList__active {
+  border-color: var(--accent-gold) !important;
+  background: #001010 !important;
+  box-shadow: 3px 3px 0 var(--accent-gold) !important;
+}
+
+.tokenList__active small {
+  color: var(--accent-gold);
+}
+
+.tokenList__soon {
+  opacity: 0.58;
 }
 
 .notice {

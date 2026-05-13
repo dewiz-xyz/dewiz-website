@@ -71,13 +71,13 @@ export const CASE_STUDIES = [
 ];
 
 export const PROTOCOL_ROADMAP = [
-  "CoW Protocol",
-  "1inch Fusion",
-  "UniswapX",
-  "Velora/Portus",
-  "Across",
-  "Li.fi",
-  "Relay.fi",
+  { name: "CoW Swap", status: "Enabled now" },
+  { name: "1inch Fusion", status: "Coming soon" },
+  { name: "UniswapX", status: "Coming soon" },
+  { name: "Velora/Portus", status: "Coming soon" },
+  { name: "Across", status: "Coming soon" },
+  { name: "Li.fi", status: "Coming soon" },
+  { name: "Relay.fi", status: "Coming soon" },
 ];
 
 export function mailto(subject: string) {
