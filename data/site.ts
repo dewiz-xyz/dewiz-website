@@ -68,13 +68,6 @@ export const CASE_STUDIES = [
     description:
       "A bounded external access module for safer, smoother, and more frequent stability parameter updates in the Sky Protocol.",
   },
-  {
-    title: "dSolver Materials",
-    eyebrow: "Intent infrastructure",
-    href: "https://github.com/dewiz-xyz/dsolver-rfq-prospectus-single-page/blob/master/docs/dSolver_Prospectus.md",
-    description:
-      "Public reference materials for dSolver, Dewiz's institutional solver and inventory infrastructure business line.",
-  },
 ];
 
 export const PROTOCOL_ROADMAP = [

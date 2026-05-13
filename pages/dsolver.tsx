@@ -24,14 +24,6 @@ export default function DSolver() {
             <a className={c.buttonPrimary} href={mailto("dSolver partnership inquiry")}>
               Discuss dSolver
             </a>
-            <a
-              className={c.buttonSecondary}
-              href="https://github.com/dewiz-xyz/dsolver-rfq-prospectus-single-page/blob/master/docs/dSolver_Prospectus.md"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              View public materials
-            </a>
           </div>
         </div>
         <div className={`${c.hero__visual} ${c.heroVisualClean}`}>
@@ -117,7 +109,7 @@ export default function DSolver() {
       <section className={c.section}>
         <div className={c.sectionHeader}>
           <span className={c.eyebrow}>Reference materials</span>
-          <h2>Case studies and public materials.</h2>
+          <h2>Case studies.</h2>
         </div>
         <CaseStudyList />
       </section>
