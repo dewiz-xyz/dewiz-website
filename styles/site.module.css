@@ -117,8 +117,7 @@
   place-items: center;
   min-height: auto;
   min-width: 0;
-  overflow: visible;
-  transform: translateX(clamp(0px, 3vw, 40px));
+  overflow: hidden;
 }
 
 .hero__visual::before {
@@ -163,15 +162,29 @@
 }
 
 .heroDiagram {
-  display: block;
   position: relative;
   z-index: 1;
-  width: min(150%, 920px);
-  max-width: none;
+  width: min(100%, 680px);
+  max-width: 100%;
   height: auto;
-  background: transparent;
-  filter: drop-shadow(0 0 30px rgba(16, 178, 226, 0.14));
-  opacity: 1;
+  mix-blend-mode: screen;
+  filter: contrast(1.25) saturate(1.08) drop-shadow(0 0 30px rgba(16, 178, 226, 0.14));
+  -webkit-mask-image: radial-gradient(
+    ellipse 74% 66% at 52% 50%,
+    #000 0 68%,
+    rgba(0, 0, 0, 0.84) 78%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 74% 66% at 52% 50%,
+    #000 0 68%,
+    rgba(0, 0, 0, 0.84) 78%,
+    transparent 100%
+  );
+}
+
+video.heroDiagram {
+  display: block;
 }
 
 .heroPanel {
@@ -416,15 +429,6 @@
 
   .hero__copy {
     grid-column: 1 / -1;
-  }
-
-  .hero__visual {
-    transform: none;
-  }
-
-  .heroDiagram {
-    width: min(100%, 760px);
-    max-width: 100%;
   }
 }
 
