@@ -101,16 +101,6 @@ export default function DSolver() {
         <ProofMetrics />
       </section>
 
-      <section className={c.notice}>
-        <h2>Investor and partner note</h2>
-        <p>
-          This page is for informational purposes only and is intended for professional,
-          institutional, and protocol counterparties. It is not an offer to sell securities or a
-          solicitation to invest. Detailed materials are shared through the appropriate diligence
-          process.
-        </p>
-      </section>
-
       <section className={c.section}>
         <div className={c.sectionHeader}>
           <span className={c.eyebrow}>Reference materials</span>
