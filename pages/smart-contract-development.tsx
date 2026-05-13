@@ -79,7 +79,7 @@ export default function SmartContractDevelopment() {
       <section className={c.section}>
         <div className={c.sectionHeader}>
           <span className={c.eyebrow}>Case studies</span>
-          <h2>Public examples of Dewiz engineering work.</h2>
+          <h2>Representative work across protocol engineering and GovOps.</h2>
         </div>
         <CaseStudyList />
       </section>
