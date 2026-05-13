@@ -113,12 +113,13 @@
 
 .hero__visual {
   position: relative;
+  z-index: 1;
   display: grid;
   place-items: center;
   min-height: auto;
   min-width: 0;
   overflow: visible;
-  transform: translateX(clamp(0px, 1.5vw, 22px));
+  transform: translateX(clamp(-70px, -4vw, -30px));
 }
 
 .hero__visual::before {
@@ -165,7 +166,7 @@
 .heroDiagram {
   position: relative;
   z-index: 1;
-  width: min(118%, 790px);
+  width: min(150%, 1020px);
   max-width: none;
   height: auto;
   background: transparent;
