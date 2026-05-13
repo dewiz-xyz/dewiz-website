@@ -172,7 +172,8 @@
   max-width: none;
   height: auto;
   background: transparent;
-  filter: drop-shadow(0 0 26px rgba(16, 178, 226, 0.14));
+  mix-blend-mode: screen;
+  filter: contrast(1.12) saturate(1.06) drop-shadow(0 0 26px rgba(16, 178, 226, 0.14));
 }
 
 video.heroDiagram {
