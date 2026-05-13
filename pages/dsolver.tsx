@@ -10,7 +10,7 @@ export default function DSolver() {
       title="dSolver"
       description="dSolver is Dewiz's institutional solver and inventory infrastructure business line for intent-based DeFi markets."
     >
-      <section className={c.hero}>
+      <section className={`${c.hero} ${c.heroTextHero}`}>
         <div className={c.hero__copy}>
           <span className={c.eyebrow}>Solver infrastructure</span>
           <h1>dSolver brings institutional inventory discipline to intent settlement.</h1>
@@ -26,19 +26,19 @@ export default function DSolver() {
             </a>
           </div>
         </div>
-        <div className={`${c.hero__visual} ${c.heroVisualClean}`}>
-          <video
-            className={c.heroDiagram}
-            aria-label="dSolver liquidity execution engine animated diagram"
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="/dsolver-execution-engine.png"
-          >
-            <source src="/dsolver-execution-engine.mp4" type="video/mp4" />
-          </video>
-        </div>
+      </section>
+
+      <section className={c.executionBand} aria-label="dSolver liquidity execution engine animated diagram">
+        <video
+          className={c.executionBand__video}
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/dsolver-execution-engine.png"
+        >
+          <source src="/dsolver-execution-engine.mp4" type="video/mp4" />
+        </video>
       </section>
 
       <section className={c.section}>
