@@ -34,7 +34,6 @@ export default function DSolver() {
             loop
             muted
             playsInline
-            poster="/dsolver-execution-engine.png"
           >
             <source src="/dsolver-execution-engine.mp4" type="video/mp4" />
           </video>

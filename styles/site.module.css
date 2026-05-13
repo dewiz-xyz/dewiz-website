@@ -172,19 +172,19 @@
   max-width: none;
   height: auto;
   background: transparent;
-  mix-blend-mode: lighten;
-  filter: brightness(1.08) contrast(1.38) saturate(1.12) drop-shadow(0 0 26px rgba(16, 178, 226, 0.14));
-  opacity: 0.94;
+  mix-blend-mode: screen;
+  filter: contrast(2.45) brightness(1.16) saturate(1.16) drop-shadow(0 0 26px rgba(16, 178, 226, 0.14));
+  opacity: 1;
   -webkit-mask-image: radial-gradient(
-    ellipse 68% 58% at 52% 50%,
-    #000 0 56%,
-    rgba(0, 0, 0, 0.82) 70%,
+    ellipse 62% 54% at 52% 50%,
+    #000 0 52%,
+    rgba(0, 0, 0, 0.72) 66%,
     transparent 100%
   );
   mask-image: radial-gradient(
-    ellipse 68% 58% at 52% 50%,
-    #000 0 56%,
-    rgba(0, 0, 0, 0.82) 70%,
+    ellipse 62% 54% at 52% 50%,
+    #000 0 52%,
+    rgba(0, 0, 0, 0.72) 66%,
     transparent 100%
   );
 }
