@@ -24,6 +24,7 @@
 .footer__top p {
   margin: 0;
   max-width: 620px;
+  font-size: 1rem;
   line-height: 1.7;
 }
 
@@ -46,7 +47,7 @@
   gap: 20px;
   align-items: center;
   margin-top: 28px;
-  font-size: 0.9rem;
+  font-size: 0.96rem;
 }
 
 .footer__bottom nav {
