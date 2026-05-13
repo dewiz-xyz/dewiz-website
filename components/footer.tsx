@@ -2,13 +2,13 @@ import Link from "next/link";
 import { CONTACT_EMAIL, SOCIAL_LINKS, mailto } from "../data/site";
 import LogoDiscord from "../public/logo-discord.svg";
 import LogoGithub from "../public/logo-github.svg";
-import LogoMirror from "../public/logo-mirror.svg";
+import LogoParagraph from "../public/logo-paragraph.svg";
 import LogoX from "../public/logo-x.svg";
 import c from "./footer.module.css";
 
 const iconByLabel = {
   Discord: <LogoDiscord aria-hidden="true" role="img" />,
-  Mirror: <LogoMirror aria-hidden="true" role="img" />,
+  Paragraph: <LogoParagraph aria-hidden="true" role="img" />,
   X: <LogoX aria-hidden="true" role="img" />,
   GitHub: <LogoGithub aria-hidden="true" role="img" />,
 };

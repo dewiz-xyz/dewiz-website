@@ -6,8 +6,8 @@ export const SOCIAL_LINKS = [
     href: "https://discord.gg/Bem5R8TKQP",
   },
   {
-    label: "Mirror",
-    href: "https://mirror.xyz/dewiz.xyz",
+    label: "Paragraph",
+    href: "https://paragraph.com/@dewiz.xyz",
   },
   {
     label: "X",
