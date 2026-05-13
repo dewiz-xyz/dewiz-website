@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Layout from "../components/layout";
 import ProofMetrics from "../components/proof-metrics";
 import CaseStudyList from "../components/case-study-list";
@@ -27,16 +28,14 @@ export default function DSolver() {
           </div>
         </div>
         <div className={`${c.hero__visual} ${c.heroVisualClean}`}>
-          <video
+          <Image
             className={c.heroDiagram}
-            aria-label="dSolver liquidity execution engine animated diagram"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src="/dsolver-execution-engine.mp4" type="video/mp4" />
-          </video>
+            src="/dsolver-execution-engine-transparent.png"
+            alt="dSolver liquidity execution engine diagram"
+            width={1536}
+            height={1024}
+            priority
+          />
         </div>
       </section>
 

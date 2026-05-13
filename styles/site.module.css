@@ -163,31 +163,15 @@
 }
 
 .heroDiagram {
+  display: block;
   position: relative;
   z-index: 1;
   width: min(150%, 920px);
   max-width: none;
   height: auto;
   background: transparent;
-  mix-blend-mode: screen;
-  filter: contrast(2.45) brightness(1.16) saturate(1.16) drop-shadow(0 0 30px rgba(16, 178, 226, 0.14));
+  filter: drop-shadow(0 0 30px rgba(16, 178, 226, 0.14));
   opacity: 1;
-  -webkit-mask-image: radial-gradient(
-    ellipse 62% 54% at 52% 50%,
-    #000 0 52%,
-    rgba(0, 0, 0, 0.72) 66%,
-    transparent 100%
-  );
-  mask-image: radial-gradient(
-    ellipse 62% 54% at 52% 50%,
-    #000 0 52%,
-    rgba(0, 0, 0, 0.72) 66%,
-    transparent 100%
-  );
-}
-
-video.heroDiagram {
-  display: block;
 }
 
 .heroPanel {
