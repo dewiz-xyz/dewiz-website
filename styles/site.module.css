@@ -19,66 +19,12 @@
   padding: clamp(44px, 8vw, 96px) 0;
 }
 
-.heroVideoHero {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  grid-template-columns: minmax(0, 1fr);
-  padding: clamp(58px, 8vw, 104px) 0;
-}
-
 .hero__copy {
   position: relative;
   z-index: 2;
   display: grid;
   gap: 20px;
   align-content: center;
-}
-
-.heroVideoHero .hero__copy {
-  max-width: 780px;
-}
-
-.heroVideoBackdrop {
-  position: absolute;
-  inset: 0 calc(50% - 50vw);
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.heroVideoBackdrop::before,
-.heroVideoBackdrop::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.heroVideoBackdrop::before {
-  z-index: 2;
-  background:
-    linear-gradient(90deg, var(--bg) 0%, rgba(0, 26, 26, 0.98) 30%, rgba(0, 26, 26, 0.72) 50%, transparent 78%),
-    linear-gradient(180deg, var(--bg) 0%, transparent 18%, transparent 78%, var(--bg) 100%);
-}
-
-.heroVideoBackdrop::after {
-  z-index: 1;
-  background:
-    radial-gradient(circle at 73% 50%, rgba(16, 178, 226, 0.2), transparent 34%),
-    radial-gradient(circle at 83% 54%, rgba(255, 197, 44, 0.1), transparent 22%);
-}
-
-.heroVideoBackdrop__video {
-  position: absolute;
-  top: 50%;
-  right: max(calc(50vw - 760px), -12vw);
-  width: min(82vw, 980px);
-  height: auto;
-  transform: translateY(-50%);
-  mix-blend-mode: screen;
-  filter: contrast(1.22) saturate(1.08) drop-shadow(0 0 28px rgba(16, 178, 226, 0.12));
-  opacity: 0.92;
 }
 
 .hero__copy:only-child {
@@ -175,7 +121,8 @@
   place-items: center;
   min-height: auto;
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
+  transform: translateX(clamp(0px, 3vw, 36px));
 }
 
 .hero__visual::before {
@@ -221,8 +168,8 @@
 .heroDiagram {
   position: relative;
   z-index: 1;
-  width: min(100%, 660px);
-  max-width: 100%;
+  width: min(148%, 880px);
+  max-width: none;
   height: auto;
   mix-blend-mode: screen;
   filter: contrast(1.25) saturate(1.08) drop-shadow(0 0 26px rgba(16, 178, 226, 0.14));
@@ -484,6 +431,7 @@ video.heroDiagram {
 }
 
 @media (max-width: 980px) {
+  .hero,
   .metricGrid,
   .splitCards,
   .textGrid,
@@ -491,9 +439,21 @@ video.heroDiagram {
     grid-template-columns: 1fr 1fr;
   }
 
-  .heroVideoBackdrop__video {
-    right: -160px;
-    width: 900px;
+  .hero {
+    min-height: auto;
+  }
+
+  .hero__copy {
+    grid-column: 1 / -1;
+  }
+
+  .hero__visual {
+    transform: none;
+  }
+
+  .heroDiagram {
+    width: min(100%, 720px);
+    max-width: 100%;
   }
 }
 
@@ -514,23 +474,6 @@ video.heroDiagram {
 
   .hero {
     padding: 38px 0 54px;
-  }
-
-  .heroVideoHero {
-    padding: 46px 0 64px;
-  }
-
-  .heroVideoBackdrop::before {
-    background:
-      linear-gradient(90deg, var(--bg) 0%, rgba(0, 26, 26, 0.96) 58%, rgba(0, 26, 26, 0.74) 100%),
-      linear-gradient(180deg, var(--bg) 0%, transparent 22%, var(--bg) 100%);
-  }
-
-  .heroVideoBackdrop__video {
-    right: 50%;
-    width: 820px;
-    opacity: 0.42;
-    transform: translate(50%, -50%);
   }
 
   .hero__visual {
