@@ -60,7 +60,7 @@
 .ctaBand p {
   margin: 0;
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 1.03rem;
   line-height: 1.85;
 }
 
@@ -209,7 +209,7 @@ video.heroDiagram {
 
 .heroPanel li {
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.85;
 }
 
@@ -298,12 +298,12 @@ video.heroDiagram {
 }
 
 .metricCard span {
-  font-size: 0.88rem;
+  font-size: 0.96rem;
   line-height: 1.7;
 }
 
 .metricCard p {
-  font-size: 0.84rem;
+  font-size: 0.94rem;
   line-height: 1.85;
 }
 
@@ -335,7 +335,7 @@ video.heroDiagram {
   width: fit-content;
   border-bottom: 2px solid var(--accent-gold);
   color: var(--accent-gold);
-  font-size: 0.84rem;
+  font-size: 0.94rem;
   line-height: 1.7;
 }
 
@@ -393,7 +393,7 @@ video.heroDiagram {
 
 .tokenList small {
   color: var(--text-muted);
-  font-size: 0.68rem;
+  font-size: 0.76rem;
 }
 
 .tokenList__active {
@@ -450,7 +450,7 @@ video.heroDiagram {
 .checkGrid p {
   margin: 0;
   color: var(--text);
-  font-size: 0.88rem;
+  font-size: 0.98rem;
   line-height: 1.8;
 }
 
