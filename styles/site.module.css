@@ -237,9 +237,19 @@ video.heroDiagram {
   overflow-wrap: break-word;
 }
 
-.sourceAsterisk {
+.valueCounter {
   color: var(--accent-gold);
+  white-space: nowrap;
+}
+
+.sourceAsterisk {
+  display: inline-block;
+  margin-left: 0.18em;
+  color: var(--accent-gold);
+  font-size: 0.42em;
+  line-height: 1;
   text-decoration: none;
+  vertical-align: super;
 }
 
 .sourceAsterisk:hover {

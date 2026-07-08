@@ -16,7 +16,7 @@ interface Props {
 function SkyProtocolValueSourceNote({ skyProtocolValue }: Props) {
   return (
     <p>
-      Protocol Value Protected combines{" "}
+      * Protocol Value Protected combines{" "}
       <a href={skyProtocolValue.sourceUrl} target="_new" rel="noreferrer noopener">
         Sky Info&apos;s reported Total Collateral
       </a>{" "}
@@ -82,7 +82,9 @@ export default function Home({ skyProtocolValue }: Props) {
         <div className={c.sectionHeader}>
           <span className={c.eyebrow}>Proof of execution</span>
           <h2>
-            Securing {skyProtocolValue.displayValue} of Sky protocol value since 2021
+            Securing{" "}
+            <span className={c.valueCounter}>{skyProtocolValue.displayValue}</span> of Sky
+            protocol value since 2021
             <a
               className={c.sourceAsterisk}
               href="#sky-protocol-value-source"

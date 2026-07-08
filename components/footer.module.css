@@ -50,18 +50,15 @@
 }
 
 .footer__source {
-  margin-top: 26px;
-  border: 2px solid var(--border);
-  padding: 18px;
+  margin-top: 18px;
   color: var(--text-muted);
-  background: var(--surface);
-  box-shadow: 4px 4px 0 #001010;
-  font-size: 0.94rem;
-  line-height: 1.8;
+  font-size: 0.82rem;
+  line-height: 1.7;
 }
 
 .footer__source p {
   margin: 0;
+  max-width: 900px;
 }
 
 .footer__source a {
