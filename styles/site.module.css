@@ -4,7 +4,8 @@
   flex-direction: column;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
+  padding-top: var(--header-full-height);
 }
 
 .main {

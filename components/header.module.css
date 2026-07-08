@@ -1,6 +1,8 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   z-index: 20;
   border-bottom: 2px solid var(--border);
   background: rgba(0, 26, 26, 0.94);
@@ -102,9 +104,9 @@
 .nav a,
 .menu a {
   color: var(--text-strong);
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: 0.78rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.96rem;
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
