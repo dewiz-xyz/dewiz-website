@@ -1,5 +1,6 @@
 .footer {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1180px, calc(100vw - 40px));
+  max-width: calc(100vw - 40px);
   margin: 0 auto;
   padding: 34px 0 42px;
   color: var(--text-muted);
@@ -114,7 +115,8 @@
 
 @media (max-width: 760px) {
   .footer {
-    width: min(100% - 40px, 1180px);
+    width: min(calc(100vw - 32px), 1180px);
+    max-width: calc(100vw - 32px);
   }
 
   .footer__top,

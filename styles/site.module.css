@@ -2,10 +2,14 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .main {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1180px, calc(100vw - 40px));
+  max-width: calc(100vw - 40px);
   margin: 0 auto;
   flex: 1;
   min-width: 0;
@@ -47,7 +51,8 @@
   max-width: 980px;
   font-size: clamp(1.45rem, 4vw, 3.15rem);
   line-height: 1.35;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .hero__copy p,
@@ -234,7 +239,8 @@ video.heroDiagram {
 .ctaBand h2 {
   font-size: clamp(1.38rem, 3vw, 2.45rem);
   line-height: 1.45;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .valueCounter {
@@ -525,7 +531,8 @@ video.heroDiagram {
 
 @media (max-width: 720px) {
   .main {
-    width: min(100% - 40px, 1180px);
+    width: min(calc(100vw - 32px), 1180px);
+    max-width: calc(100vw - 32px);
   }
 
   .hero,
@@ -547,7 +554,8 @@ video.heroDiagram {
   }
 
   .hero__copy h1 {
-    font-size: clamp(1.22rem, 7vw, 2rem);
+    font-size: clamp(1.12rem, 6.1vw, 1.7rem);
+    line-height: 1.42;
   }
 
   .actions {
@@ -566,7 +574,7 @@ video.heroDiagram {
 
 @media (max-width: 380px) {
   .hero__copy h1 {
-    font-size: clamp(1.04rem, 6vw, 1.3rem);
+    font-size: clamp(1rem, 5.7vw, 1.22rem);
     line-height: 1.45;
   }
 

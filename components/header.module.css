@@ -8,7 +8,8 @@
 
 .header__content {
   display: grid;
-  width: min(1180px, calc(100% - 40px));
+  width: min(1180px, calc(100vw - 40px));
+  max-width: calc(100vw - 40px);
   height: 86px;
   margin: 0 auto;
   grid-template-columns: minmax(0, auto) 1fr;
@@ -237,12 +238,13 @@
 
 @media (max-width: 760px) {
   .header__content {
-    width: min(100% - 40px, 1180px);
+    width: min(calc(100vw - 32px), 1180px);
+    max-width: calc(100vw - 32px);
     gap: 14px;
   }
 
   .logo {
-    width: min(230px, calc(100vw - 116px));
+    width: min(230px, calc(100vw - 108px));
     height: 36px;
   }
 
@@ -252,7 +254,7 @@
   }
 
   .logo__full svg {
-    width: min(230px, calc(100vw - 116px));
+    width: min(230px, calc(100vw - 108px));
     height: auto;
   }
 
@@ -271,10 +273,10 @@
 
 @media (max-width: 380px) {
   .logo {
-    width: min(204px, calc(100vw - 116px));
+    width: min(204px, calc(100vw - 108px));
   }
 
   .logo__full svg {
-    width: min(204px, calc(100vw - 116px));
+    width: min(204px, calc(100vw - 108px));
   }
 }
