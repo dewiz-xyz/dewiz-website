@@ -49,6 +49,29 @@
   overflow-wrap: anywhere;
 }
 
+.footer__source {
+  margin-top: 26px;
+  border: 2px solid var(--border);
+  padding: 18px;
+  color: var(--text-muted);
+  background: var(--surface);
+  box-shadow: 4px 4px 0 #001010;
+  font-size: 0.94rem;
+  line-height: 1.8;
+}
+
+.footer__source p {
+  margin: 0;
+}
+
+.footer__source a {
+  color: var(--accent-gold);
+}
+
+.footer__source a:hover {
+  color: var(--text-strong);
+}
+
 .footer__bottom {
   display: grid;
   grid-template-columns: 1fr auto;

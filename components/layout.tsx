@@ -8,9 +8,10 @@ interface Props {
   title: string;
   description: string;
   children: ReactNode;
+  footerSourceNote?: ReactNode;
 }
 
-export default function Layout({ title, description, children }: Props) {
+export default function Layout({ title, description, children, footerSourceNote }: Props) {
   const pageTitle = title === "Dewiz" ? "Dewiz | DeFi Infrastructure" : `${title} | Dewiz`;
 
   return (
@@ -34,7 +35,7 @@ export default function Layout({ title, description, children }: Props) {
       <main className={c.main} id="main-content">
         {children}
       </main>
-      <Footer />
+      <Footer sourceNote={footerSourceNote} />
     </div>
   );
 }

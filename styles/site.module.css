@@ -237,6 +237,15 @@ video.heroDiagram {
   overflow-wrap: break-word;
 }
 
+.sourceAsterisk {
+  color: var(--accent-gold);
+  text-decoration: none;
+}
+
+.sourceAsterisk:hover {
+  color: var(--text-strong);
+}
+
 .metricGrid,
 .cardGrid,
 .splitCards,

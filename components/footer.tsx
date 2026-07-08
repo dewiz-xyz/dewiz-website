@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ReactNode } from "react";
 import { CONTACT_EMAIL, SOCIAL_LINKS, mailto } from "../data/site";
 import LogoDiscord from "../public/logo-discord.svg";
 import LogoGithub from "../public/logo-github.svg";
@@ -13,7 +14,11 @@ const iconByLabel = {
   GitHub: <LogoGithub aria-hidden="true" role="img" />,
 };
 
-export default function Footer() {
+interface Props {
+  sourceNote?: ReactNode;
+}
+
+export default function Footer({ sourceNote }: Props) {
   return (
     <footer className={c.footer}>
       <div className={c.footer__top}>
@@ -25,6 +30,11 @@ export default function Footer() {
           {CONTACT_EMAIL}
         </a>
       </div>
+      {sourceNote ? (
+        <div className={c.footer__source} id="sky-protocol-value-source">
+          {sourceNote}
+        </div>
+      ) : null}
       <div className={c.footer__bottom}>
         <nav aria-label="Footer navigation">
           <Link href="/dsolver">dSolver</Link>

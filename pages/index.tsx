@@ -1,15 +1,62 @@
+import type { GetStaticProps } from "next";
 import Link from "next/link";
 import Layout from "../components/layout";
 import ProofMetrics from "../components/proof-metrics";
 import CaseStudyList from "../components/case-study-list";
 import { mailto } from "../data/site";
+import { getSkyProtocolValue, type SkyProtocolValue } from "../lib/sky-protocol-value";
 import c from "../styles/site.module.css";
 
-export default function Home() {
+const SKY_INFO_SUPPLY_URL = "https://info.skyeco.com/supply";
+
+interface Props {
+  skyProtocolValue: SkyProtocolValue;
+}
+
+function SkyProtocolValueSourceNote({ skyProtocolValue }: Props) {
+  return (
+    <p>
+      Protocol Value Protected combines{" "}
+      <a href={skyProtocolValue.sourceUrl} target="_new" rel="noreferrer noopener">
+        Sky Info&apos;s reported Total Collateral
+      </a>{" "}
+      with{" "}
+      <a href={SKY_INFO_SUPPLY_URL} target="_new" rel="noreferrer noopener">
+        outstanding DAI and USDS supply
+      </a>
+      . It is not presented as TVL; it is an estimate of protocol value exposed to
+      smart contract and governance execution risk.
+      {skyProtocolValue.isFallback ? (
+        <>
+          {" "}
+          Fallback value calculated on July 8, 2026.{" "}
+          <a href={skyProtocolValue.sourceUrl} target="_new" rel="noreferrer noopener">
+            Visit Sky Info
+          </a>{" "}
+          for the current value.
+        </>
+      ) : null}
+    </p>
+  );
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const skyProtocolValue = await getSkyProtocolValue();
+
+  return {
+    props: {
+      skyProtocolValue,
+    },
+    revalidate: 60 * 60,
+  };
+};
+
+export default function Home({ skyProtocolValue }: Props) {
   return (
     <Layout
       title="Dewiz"
       description="Dewiz builds DeFi infrastructure across intent solver operations, EVM smart contracts, and protocol governance operations."
+      footerSourceNote={<SkyProtocolValueSourceNote skyProtocolValue={skyProtocolValue} />}
     >
       <section className={c.hero}>
         <div className={c.hero__copy}>
@@ -34,7 +81,16 @@ export default function Home() {
       <section className={c.section}>
         <div className={c.sectionHeader}>
           <span className={c.eyebrow}>Proof of execution</span>
-          <h2>Built around infrastructure that already carries real risk.</h2>
+          <h2>
+            Securing {skyProtocolValue.displayValue} of Sky protocol value since 2021
+            <a
+              className={c.sourceAsterisk}
+              href="#sky-protocol-value-source"
+              aria-label="View Sky protocol value source note"
+            >
+              *
+            </a>
+          </h2>
         </div>
         <ProofMetrics />
       </section>
