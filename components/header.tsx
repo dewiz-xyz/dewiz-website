@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import LogoHatM from "../public/logo-hat-m.svg";
-import HatS from "../public/hat-s.svg";
+import HatM from "../public/hat-m.svg";
 import c from "./header.module.css";
 
 const navLinks = [
@@ -35,7 +35,7 @@ export default function Header() {
             <LogoHatM aria-label="Dewiz home" role="img" />
           </Link>
           <Link href="/" className={c.logo__hat_s}>
-            <HatS aria-label="Dewiz home" role="img" />
+            <HatM aria-label="Dewiz home" role="img" />
           </Link>
         </picture>
         <nav className={c.nav} aria-label="Main navigation">
