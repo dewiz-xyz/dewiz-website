@@ -29,6 +29,7 @@
 .name,
 .role {
   color: var(--text-strong);
+  font-family: var(--font-display);
   font-weight: 400;
 }
 

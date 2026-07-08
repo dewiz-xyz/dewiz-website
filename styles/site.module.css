@@ -8,6 +8,7 @@
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
   flex: 1;
+  min-width: 0;
 }
 
 .hero {
@@ -46,6 +47,7 @@
   max-width: 980px;
   font-size: clamp(1.45rem, 4vw, 3.15rem);
   line-height: 1.35;
+  overflow-wrap: break-word;
 }
 
 .hero__copy p,
@@ -68,6 +70,8 @@
 
 .eyebrow {
   color: var(--accent-gold);
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: 0.78rem;
   line-height: 1.7;
   text-transform: uppercase;
@@ -89,8 +93,12 @@
   justify-content: center;
   border: 2px solid var(--border);
   padding: 0 16px;
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: 0.84rem;
   line-height: 1.45;
+  text-align: center;
+  overflow-wrap: anywhere;
   transition:
     transform 120ms ease,
     box-shadow 120ms ease,
@@ -226,6 +234,7 @@ video.heroDiagram {
 .ctaBand h2 {
   font-size: clamp(1.38rem, 3vw, 2.45rem);
   line-height: 1.45;
+  overflow-wrap: break-word;
 }
 
 .metricGrid,
@@ -275,6 +284,8 @@ video.heroDiagram {
 
 .metricCard strong {
   color: var(--accent-gold);
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: clamp(0.95rem, 2.1vw, 1.45rem);
   line-height: 1.45;
 }
@@ -301,6 +312,7 @@ video.heroDiagram {
 .textGrid article {
   display: grid;
   gap: 14px;
+  min-width: 0;
   padding: clamp(20px, 3.5vw, 30px);
 }
 
@@ -308,6 +320,8 @@ video.heroDiagram {
 .caseCard h3,
 .textGrid h3 {
   margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: 1.12rem;
   line-height: 1.65;
 }
@@ -372,7 +386,9 @@ video.heroDiagram {
 }
 
 .tokenList strong {
-  font-size: 0.88rem;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.76rem;
 }
 
 .tokenList small {
@@ -404,6 +420,8 @@ video.heroDiagram {
 .notice h2 {
   margin: 0;
   color: var(--accent-gold);
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: 1.02rem;
   line-height: 1.7;
 }
@@ -424,6 +442,8 @@ video.heroDiagram {
   border: 2px solid var(--accent-gold);
   color: var(--accent-gold);
   background: #001010;
+  font-family: var(--font-display);
+  font-weight: 400;
   font-size: 0.82rem;
 }
 
@@ -486,7 +506,7 @@ video.heroDiagram {
 
 @media (max-width: 720px) {
   .main {
-    width: min(100% - 28px, 1180px);
+    width: min(100% - 40px, 1180px);
   }
 
   .hero,
@@ -518,6 +538,29 @@ video.heroDiagram {
 
   .buttonPrimary,
   .buttonSecondary {
-    width: 100%;
+    width: calc(100% - 5px);
+    min-width: 0;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero__copy h1 {
+    font-size: clamp(1.04rem, 6vw, 1.3rem);
+    line-height: 1.45;
+  }
+
+  .sectionHeader h2,
+  .ctaBand h2 {
+    font-size: clamp(1.02rem, 5.8vw, 1.32rem);
+    line-height: 1.5;
+  }
+
+  .featureCard h3,
+  .caseCard h3,
+  .textGrid h3 {
+    font-size: 0.96rem;
+    line-height: 1.65;
   }
 }
