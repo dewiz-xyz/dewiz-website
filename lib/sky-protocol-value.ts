@@ -19,6 +19,7 @@ export const SKY_INFO_SOURCE_URL = "https://info.skyeco.com/collateral";
 const ONE_BILLION = 1_000_000_000;
 const MIN_PROTOCOL_VALUE = 5_000_000_000;
 const MAX_PROTOCOL_VALUE = 100_000_000_000;
+const REQUEST_TIMEOUT_MS = 8000;
 
 export const FALLBACK_SKY_PROTOCOL_VALUE: SkyProtocolValue = {
   displayValue: "$25.0B",
@@ -104,8 +105,11 @@ function normalizeSkyProtocolValue(data: SkyOverallResponse): SkyProtocolValue |
 }
 
 export async function getSkyProtocolValue(): Promise<SkyProtocolValue> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
   try {
-    const response = await fetch(API_URL);
+    const response = await fetch(API_URL, { signal: controller.signal });
     if (!response.ok) {
       return FALLBACK_SKY_PROTOCOL_VALUE;
     }
@@ -114,5 +118,7 @@ export async function getSkyProtocolValue(): Promise<SkyProtocolValue> {
     return normalizeSkyProtocolValue(data) ?? FALLBACK_SKY_PROTOCOL_VALUE;
   } catch {
     return FALLBACK_SKY_PROTOCOL_VALUE;
+  } finally {
+    clearTimeout(timeout);
   }
 }

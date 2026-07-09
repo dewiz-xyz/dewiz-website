@@ -371,6 +371,18 @@ video.heroDiagram {
     box-shadow 120ms ease;
 }
 
+.caseCardMain {
+  display: grid;
+  gap: 14px;
+  color: inherit;
+}
+
+.caseMetricLine {
+  color: var(--accent-gold) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.7 !important;
+}
+
 .caseCard:hover {
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0 var(--accent-gold);

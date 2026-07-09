@@ -3,7 +3,10 @@ import Link from "next/link";
 import Layout from "../components/layout";
 import ProofMetrics from "../components/proof-metrics";
 import CaseStudyList from "../components/case-study-list";
+import LitePsmMetricsSourceNote from "../components/litepsm-metrics-source-note";
+import SourceNoteLink from "../components/source-note-link";
 import { mailto } from "../data/site";
+import { getLitePsmMetrics, type LitePsmMetrics } from "../lib/litepsm-metrics";
 import { getSkyProtocolValue, type SkyProtocolValue } from "../lib/sky-protocol-value";
 import c from "../styles/site.module.css";
 
@@ -11,9 +14,14 @@ const SKY_INFO_SUPPLY_URL = "https://info.skyeco.com/supply";
 
 interface Props {
   skyProtocolValue: SkyProtocolValue;
+  litePsmMetrics: LitePsmMetrics;
 }
 
-function SkyProtocolValueSourceNote({ skyProtocolValue }: Props) {
+interface SkyProtocolValueSourceNoteProps {
+  skyProtocolValue: SkyProtocolValue;
+}
+
+function SkyProtocolValueSourceNote({ skyProtocolValue }: SkyProtocolValueSourceNoteProps) {
   return (
     <p>
       * Protocol Value Protected combines{" "}
@@ -41,22 +49,31 @@ function SkyProtocolValueSourceNote({ skyProtocolValue }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const skyProtocolValue = await getSkyProtocolValue();
+  const [skyProtocolValue, litePsmMetrics] = await Promise.all([
+    getSkyProtocolValue(),
+    getLitePsmMetrics(),
+  ]);
 
   return {
     props: {
       skyProtocolValue,
+      litePsmMetrics,
     },
     revalidate: 60 * 60,
   };
 };
 
-export default function Home({ skyProtocolValue }: Props) {
+export default function Home({ skyProtocolValue, litePsmMetrics }: Props) {
   return (
     <Layout
       title="Dewiz"
       description="Dewiz builds DeFi infrastructure across intent solver operations, EVM smart contracts, and protocol governance operations."
-      footerSourceNote={<SkyProtocolValueSourceNote skyProtocolValue={skyProtocolValue} />}
+      footerSourceNote={
+        <>
+          <SkyProtocolValueSourceNote skyProtocolValue={skyProtocolValue} />
+          <LitePsmMetricsSourceNote litePsmMetrics={litePsmMetrics} />
+        </>
+      }
     >
       <section className={c.hero}>
         <div className={c.hero__copy}>
@@ -85,16 +102,16 @@ export default function Home({ skyProtocolValue }: Props) {
             Securing{" "}
             <span className={c.valueCounter}>{skyProtocolValue.displayValue}</span> of Sky
             protocol value since 2021
-            <a
+            <SourceNoteLink
               className={c.sourceAsterisk}
-              href="#sky-protocol-value-source"
-              aria-label="View Sky protocol value source note"
+              sourceId="sky-protocol-value-source"
+              ariaLabel="View Sky protocol value source note"
             >
               *
-            </a>
+            </SourceNoteLink>
           </h2>
         </div>
-        <ProofMetrics />
+        <ProofMetrics litePsmMetrics={litePsmMetrics} />
       </section>
 
       <section className={c.section}>
@@ -130,7 +147,7 @@ export default function Home({ skyProtocolValue }: Props) {
           <span className={c.eyebrow}>Case studies</span>
           <h2>Selected public work and reference materials.</h2>
         </div>
-        <CaseStudyList />
+        <CaseStudyList litePsmMetrics={litePsmMetrics} />
       </section>
 
       <section className={c.ctaBand}>
