@@ -94,7 +94,18 @@
   color: var(--text-muted);
 }
 
-.footer__bottom a:hover {
+.footer__button {
+  border: 0;
+  padding: 0;
+  color: var(--text-muted);
+  background: transparent;
+  font: inherit;
+  line-height: inherit;
+  cursor: pointer;
+}
+
+.footer__bottom a:hover,
+.footer__button:hover {
   color: var(--accent-gold);
 }
 

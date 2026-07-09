@@ -281,6 +281,48 @@ video.heroDiagram {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.policyBody {
+  display: grid;
+  max-width: 960px;
+  gap: 24px;
+}
+
+.policyBody article {
+  display: grid;
+  gap: 12px;
+}
+
+.policyBody h2 {
+  margin: 0;
+  color: var(--text-strong);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1rem, 2.1vw, 1.35rem);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.policyBody p,
+.policyBody li {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.policyBody ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.policyBody code {
+  color: var(--accent-gold);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+
 .splitCards,
 .textGrid {
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { ReactNode } from "react";
+import AnalyticsConsent from "./analytics-consent";
 import Header from "./header";
 import Footer from "./footer";
 import c from "../styles/site.module.css";
@@ -36,6 +37,7 @@ export default function Layout({ title, description, children, footerSourceNote 
         {children}
       </main>
       <Footer sourceNote={footerSourceNote} />
+      <AnalyticsConsent />
     </div>
   );
 }

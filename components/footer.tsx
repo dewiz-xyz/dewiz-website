@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ReactNode } from "react";
 import { CONTACT_EMAIL, SOCIAL_LINKS, mailto } from "../data/site";
+import { ANALYTICS_CONSENT_OPEN_EVENT } from "../lib/analytics-consent";
 import LogoDiscord from "../public/logo-discord.svg";
 import LogoGithub from "../public/logo-github.svg";
 import LogoParagraph from "../public/logo-paragraph.svg";
@@ -13,6 +14,10 @@ const iconByLabel = {
   X: <LogoX aria-hidden="true" role="img" />,
   GitHub: <LogoGithub aria-hidden="true" role="img" />,
 };
+
+function openCookieSettings() {
+  window.dispatchEvent(new Event(ANALYTICS_CONSENT_OPEN_EVENT));
+}
 
 interface Props {
   sourceNote?: ReactNode;
@@ -41,6 +46,10 @@ export default function Footer({ sourceNote }: Props) {
           <Link href="/smart-contract-development">Smart Contracts & Consulting</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/cookie-policy">Cookie Policy</Link>
+          <button className={c.footer__button} type="button" onClick={openCookieSettings}>
+            Cookie settings
+          </button>
         </nav>
         <nav className={c.social} aria-label="Social links">
           {SOCIAL_LINKS.map((link) => (
