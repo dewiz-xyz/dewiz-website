@@ -19,7 +19,6 @@
   clip-path: circle(50%);
   max-width: 96px;
   max-height: 96px;
-  border: 2px solid var(--border);
 }
 
 .content {
