@@ -1,7 +1,10 @@
+import type { GetStaticProps } from "next";
 import Layout from "../components/layout";
 import ProofMetrics from "../components/proof-metrics";
 import CaseStudyList from "../components/case-study-list";
+import LitePsmMetricsSourceNote from "../components/litepsm-metrics-source-note";
 import { mailto } from "../data/site";
+import { getLitePsmMetrics, type LitePsmMetrics } from "../lib/litepsm-metrics";
 import c from "../styles/site.module.css";
 
 const capabilities = [
@@ -13,11 +16,27 @@ const capabilities = [
   "Operational support for production DeFi systems after launch",
 ];
 
-export default function SmartContractDevelopment() {
+interface Props {
+  litePsmMetrics: LitePsmMetrics;
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const litePsmMetrics = await getLitePsmMetrics();
+
+  return {
+    props: {
+      litePsmMetrics,
+    },
+    revalidate: 60 * 60,
+  };
+};
+
+export default function SmartContractDevelopment({ litePsmMetrics }: Props) {
   return (
     <Layout
       title="Smart Contracts & Consulting"
       description="Dewiz provides EVM smart contract development, DeFi protocol consulting, and GovOps execution support."
+      footerSourceNote={<LitePsmMetricsSourceNote litePsmMetrics={litePsmMetrics} />}
     >
       <section className={c.hero}>
         <div className={c.hero__copy}>
@@ -73,7 +92,7 @@ export default function SmartContractDevelopment() {
           <span className={c.eyebrow}>Proof of execution</span>
           <h2>Protocol work with visible on-chain consequences.</h2>
         </div>
-        <ProofMetrics />
+        <ProofMetrics litePsmMetrics={litePsmMetrics} />
       </section>
 
       <section className={c.section}>
@@ -81,7 +100,7 @@ export default function SmartContractDevelopment() {
           <span className={c.eyebrow}>Case studies</span>
           <h2>Representative work across protocol engineering and GovOps.</h2>
         </div>
-        <CaseStudyList />
+        <CaseStudyList litePsmMetrics={litePsmMetrics} />
       </section>
 
       <section className={c.ctaBand}>
