@@ -4,48 +4,20 @@ import Layout from "../components/layout";
 import ProofMetrics from "../components/proof-metrics";
 import CaseStudyList from "../components/case-study-list";
 import LitePsmMetricsSourceNote from "../components/litepsm-metrics-source-note";
+import SkyProtocolValueSourceNote from "../components/sky-protocol-value-source-note";
 import SourceNoteLink from "../components/source-note-link";
 import { mailto } from "../data/site";
 import { getLitePsmMetrics, type LitePsmMetrics } from "../lib/litepsm-metrics";
-import { getSkyProtocolValue, type SkyProtocolValue } from "../lib/sky-protocol-value";
+import {
+  getSkyProtocolValue,
+  SKY_PROTOCOL_VALUE_SOURCE_ID,
+  type SkyProtocolValue,
+} from "../lib/sky-protocol-value";
 import c from "../styles/site.module.css";
-
-const SKY_INFO_SUPPLY_URL = "https://info.skyeco.com/supply";
 
 interface Props {
   skyProtocolValue: SkyProtocolValue;
   litePsmMetrics: LitePsmMetrics;
-}
-
-interface SkyProtocolValueSourceNoteProps {
-  skyProtocolValue: SkyProtocolValue;
-}
-
-function SkyProtocolValueSourceNote({ skyProtocolValue }: SkyProtocolValueSourceNoteProps) {
-  return (
-    <p>
-      * Protocol Value Protected combines{" "}
-      <a href={skyProtocolValue.sourceUrl} target="_new" rel="noreferrer noopener">
-        Sky Info&apos;s reported Total Collateral
-      </a>{" "}
-      with{" "}
-      <a href={SKY_INFO_SUPPLY_URL} target="_new" rel="noreferrer noopener">
-        outstanding DAI and USDS supply
-      </a>
-      . It is not presented as TVL; it is an estimate of protocol value exposed to
-      smart contract and governance execution risk.
-      {skyProtocolValue.isFallback ? (
-        <>
-          {" "}
-          Fallback value calculated on July 8, 2026.{" "}
-          <a href={skyProtocolValue.sourceUrl} target="_new" rel="noreferrer noopener">
-            Visit Sky Info
-          </a>{" "}
-          for the current value.
-        </>
-      ) : null}
-    </p>
-  );
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
@@ -104,7 +76,7 @@ export default function Home({ skyProtocolValue, litePsmMetrics }: Props) {
             protocol value since 2021
             <SourceNoteLink
               className={c.sourceAsterisk}
-              sourceId="sky-protocol-value-source"
+              sourceId={SKY_PROTOCOL_VALUE_SOURCE_ID}
               ariaLabel="View Sky protocol value source note"
             >
               *

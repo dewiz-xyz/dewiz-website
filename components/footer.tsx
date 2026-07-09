@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { CONTACT_EMAIL, SOCIAL_LINKS, mailto } from "../data/site";
 import { ANALYTICS_CONSENT_OPEN_EVENT } from "../lib/analytics-consent";
+import { SKY_PROTOCOL_VALUE_SOURCE_ID } from "../lib/sky-protocol-value";
 import LogoDiscord from "../public/logo-discord.svg";
 import LogoGithub from "../public/logo-github.svg";
 import LogoParagraph from "../public/logo-paragraph.svg";
@@ -36,7 +37,7 @@ export default function Footer({ sourceNote }: Props) {
         </a>
       </div>
       {sourceNote ? (
-        <div className={c.footer__source} id="sky-protocol-value-source">
+        <div className={c.footer__source} id={SKY_PROTOCOL_VALUE_SOURCE_ID}>
           {sourceNote}
         </div>
       ) : null}

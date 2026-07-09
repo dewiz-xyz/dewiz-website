@@ -1,14 +1,50 @@
+import type { GetStaticProps } from "next";
 import Layout from "../components/layout";
 import ProofMetrics from "../components/proof-metrics";
 import CaseStudyList from "../components/case-study-list";
+import LitePsmMetricsSourceNote from "../components/litepsm-metrics-source-note";
+import SkyProtocolValueSourceNote from "../components/sky-protocol-value-source-note";
+import SourceNoteLink from "../components/source-note-link";
 import { PROTOCOL_ROADMAP, mailto } from "../data/site";
+import { getLitePsmMetrics, type LitePsmMetrics } from "../lib/litepsm-metrics";
+import {
+  getSkyProtocolValue,
+  SKY_PROTOCOL_VALUE_SOURCE_ID,
+  type SkyProtocolValue,
+} from "../lib/sky-protocol-value";
 import c from "../styles/site.module.css";
 
-export default function DSolver() {
+interface Props {
+  skyProtocolValue: SkyProtocolValue;
+  litePsmMetrics: LitePsmMetrics;
+}
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const [skyProtocolValue, litePsmMetrics] = await Promise.all([
+    getSkyProtocolValue(),
+    getLitePsmMetrics(),
+  ]);
+
+  return {
+    props: {
+      skyProtocolValue,
+      litePsmMetrics,
+    },
+    revalidate: 60 * 60,
+  };
+};
+
+export default function DSolver({ skyProtocolValue, litePsmMetrics }: Props) {
   return (
     <Layout
       title="dSolver"
       description="dSolver is Dewiz's institutional solver and inventory infrastructure business line for intent-based DeFi markets."
+      footerSourceNote={
+        <>
+          <SkyProtocolValueSourceNote skyProtocolValue={skyProtocolValue} />
+          <LitePsmMetricsSourceNote litePsmMetrics={litePsmMetrics} />
+        </>
+      }
     >
       <section className={c.hero}>
         <div className={c.hero__copy}>
@@ -96,9 +132,20 @@ export default function DSolver() {
       <section className={c.section}>
         <div className={c.sectionHeader}>
           <span className={c.eyebrow}>Proof of execution</span>
-          <h2>The operator behind dSolver already works on critical DeFi infrastructure.</h2>
+          <h2>
+            Securing{" "}
+            <span className={c.valueCounter}>{skyProtocolValue.displayValue}</span> of Sky
+            protocol value since 2021
+            <SourceNoteLink
+              className={c.sourceAsterisk}
+              sourceId={SKY_PROTOCOL_VALUE_SOURCE_ID}
+              ariaLabel="View Sky protocol value source note"
+            >
+              *
+            </SourceNoteLink>
+          </h2>
         </div>
-        <ProofMetrics />
+        <ProofMetrics litePsmMetrics={litePsmMetrics} />
       </section>
 
       <section className={c.section}>
@@ -106,7 +153,7 @@ export default function DSolver() {
           <span className={c.eyebrow}>Reference materials</span>
           <h2>Case studies.</h2>
         </div>
-        <CaseStudyList />
+        <CaseStudyList litePsmMetrics={litePsmMetrics} />
       </section>
     </Layout>
   );

@@ -16,6 +16,7 @@ interface SkyOverallResponse {
 
 const API_URL = "https://info-sky.blockanalitica.com/overall/?days_ago=1";
 export const SKY_INFO_SOURCE_URL = "https://info.skyeco.com/collateral";
+export const SKY_PROTOCOL_VALUE_SOURCE_ID = "sky-protocol-value-source";
 const ONE_BILLION = 1_000_000_000;
 const MIN_PROTOCOL_VALUE = 5_000_000_000;
 const MAX_PROTOCOL_VALUE = 100_000_000_000;
