@@ -1,6 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import {
+  getNextHeaderScrollState,
+  type HeaderScrollState,
+} from "./header-scroll-state.mjs";
 import LogoHatM from "../public/logo-hat-m.svg";
 import HatS from "../public/hat-s.svg";
 import c from "./header.module.css";
@@ -15,26 +19,66 @@ const navLinks = [
 export default function Header() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isHeaderHidden, setIsHeaderHidden] = useState(false);
+  const scrollState = useRef<HeaderScrollState>({ lastScrollY: 0, isHidden: false });
 
   useEffect(() => {
-    const closeMenu = () => setIsMenuOpen(false);
+    let routeResetFrame: number | undefined;
+
+    const resetHeader = () => {
+      setIsHeaderHidden(false);
+      scrollState.current = { lastScrollY: window.scrollY, isHidden: false };
+    };
+    const handleRouteStart = () => {
+      setIsMenuOpen(false);
+      resetHeader();
+    };
+    const handleRouteComplete = () => {
+      if (routeResetFrame !== undefined) cancelAnimationFrame(routeResetFrame);
+      routeResetFrame = requestAnimationFrame(resetHeader);
+    };
     const closeMenuOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeMenu();
+      if (event.key === "Escape") setIsMenuOpen(false);
     };
 
     document.addEventListener("keydown", closeMenuOnEscape);
-    router.events.on("routeChangeStart", closeMenu);
+    router.events.on("routeChangeStart", handleRouteStart);
+    router.events.on("routeChangeComplete", handleRouteComplete);
 
     return () => {
       document.removeEventListener("keydown", closeMenuOnEscape);
-      router.events.off("routeChangeStart", closeMenu);
+      router.events.off("routeChangeStart", handleRouteStart);
+      router.events.off("routeChangeComplete", handleRouteComplete);
+      if (routeResetFrame !== undefined) cancelAnimationFrame(routeResetFrame);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    scrollState.current = { lastScrollY: window.scrollY, isHidden: false };
+    setIsHeaderHidden(false);
+
+    const handleScroll = () => {
+      const nextState = getNextHeaderScrollState(
+        scrollState.current,
+        window.scrollY,
+        isMenuOpen,
+      );
+      scrollState.current = nextState;
+      setIsHeaderHidden(nextState.isHidden);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMenuOpen]);
 
   const currentRoute = (href: string) => (router.pathname === href ? "page" : undefined);
 
   return (
-    <header className={c.header}>
+    <header
+      className={
+        isHeaderHidden && !isMenuOpen ? `${c.header} ${c.header_hidden}` : c.header
+      }
+    >
       <div className={c.header__content}>
         <picture className={c.logo}>
           <Link href="/" className={c.logo__full} aria-current={currentRoute("/")}>

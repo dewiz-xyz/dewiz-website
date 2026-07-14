@@ -7,6 +7,16 @@
   height: 86px;
   border-bottom: 2px solid var(--border);
   background: rgba(0, 26, 26, 0.97);
+  transform: translateY(0);
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header_hidden {
+  transform: translateY(-100%);
+}
+
+.header:focus-within {
+  transform: translateY(0);
 }
 
 .header__content {
@@ -264,6 +274,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .header {
+    transition: none !important;
+  }
+
   .logo a,
   .nav a,
   .menu a,
