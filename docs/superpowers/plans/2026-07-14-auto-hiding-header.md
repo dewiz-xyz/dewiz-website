@@ -12,7 +12,7 @@
 
 ## File Map
 
-- Create `components/header-scroll-state.mts`: pure, deterministic ESM scroll-state transition.
+- Create `components/header-scroll-state.ts`: pure, deterministic scroll-state transition.
 - Create `tests/header-scroll-state.test.mjs`: Node behavioral tests for top, direction, accumulation, and menu locking.
 - Create `tests/header-wiring.test.mjs`: integration contract for React event wiring and CSS accessibility rules.
 - Modify `components/header.tsx`: passive listener, route reset, mobile-menu reset, and hidden class.
@@ -22,14 +22,14 @@
 
 **Files:**
 - Create: `tests/header-scroll-state.test.mjs`
-- Create: `components/header-scroll-state.mts`
+- Create: `components/header-scroll-state.ts`
 
 - [ ] **Step 1: Write the failing behavioral tests**
 
 ```js
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getNextHeaderScrollState } from "../components/header-scroll-state.mts";
+import { getNextHeaderScrollState } from "../components/header-scroll-state.ts";
 
 test("stays visible at and below 80 pixels", () => {
   const next = getNextHeaderScrollState({ lastScrollY: 76, isHidden: true }, 80, false);
@@ -72,7 +72,7 @@ test("an open menu forces visibility and resets the baseline", () => {
 
 Run: `node --test tests/header-scroll-state.test.mjs`
 
-Expected: FAIL with `ERR_MODULE_NOT_FOUND` for `components/header-scroll-state.mts`.
+Expected: FAIL with `ERR_MODULE_NOT_FOUND` for `components/header-scroll-state.ts`.
 
 - [ ] **Step 3: Implement the minimal transition**
 
@@ -110,7 +110,7 @@ Expected: 4 tests pass, 0 fail.
 - [ ] **Step 5: Commit the green transition**
 
 ```bash
-git add components/header-scroll-state.mts tests/header-scroll-state.test.mjs
+git add components/header-scroll-state.ts tests/header-scroll-state.test.mjs
 git commit -m "Test auto-hiding header scroll state"
 ```
 
@@ -426,7 +426,7 @@ Close Playwright, stop the server, delete only `.playwright-cli/` and `output/` 
 ### Task 5: Final verification and commit
 
 **Files:**
-- Create: `components/header-scroll-state.mts`
+- Create: `components/header-scroll-state.ts`
 - Create: `tests/header-scroll-state.test.mjs`
 - Create: `tests/header-wiring.test.mjs`
 - Modify: `components/header.tsx`
@@ -441,6 +441,6 @@ Expected: all checks pass and status contains only intended files.
 - [ ] **Step 2: Commit the implementation**
 
 ```bash
-git add components/header-scroll-state.mts tests/header-scroll-state.test.mjs tests/header-wiring.test.mjs components/header.tsx components/header.module.css docs/superpowers/plans/2026-07-14-auto-hiding-header.md
+git add components/header-scroll-state.ts tests/header-scroll-state.test.mjs tests/header-wiring.test.mjs components/header.tsx components/header.module.css docs/superpowers/plans/2026-07-14-auto-hiding-header.md
 git commit -m "Add direction-aware auto-hiding header"
 ```

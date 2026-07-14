@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import {
   getNextHeaderScrollState,
   type HeaderScrollState,
-} from "./header-scroll-state.mjs";
+} from "./header-scroll-state";
 import LogoHatM from "../public/logo-hat-m.svg";
 import HatS from "../public/hat-s.svg";
 import c from "./header.module.css";

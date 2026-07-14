@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { getNextHeaderScrollState } from "../components/header-scroll-state.mts";
+import { getNextHeaderScrollState } from "../components/header-scroll-state.ts";
 
 test("stays visible at and below 80 pixels", () => {
   const next = getNextHeaderScrollState({ lastScrollY: 76, isHidden: true }, 80, false);
