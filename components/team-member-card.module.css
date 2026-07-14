@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: 14px;
   align-items: center;
   text-align: center;
 }
@@ -12,13 +12,13 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: var(--spacing-2);
+  gap: 12px;
 }
 
 .avatar img {
   clip-path: circle(50%);
-  max-width: 128px;
-  max-height: 128px;
+  max-width: 96px;
+  max-height: 96px;
 }
 
 .content {
@@ -27,29 +27,38 @@
 
 .name,
 .role {
-  color: var(--fg-color-link);
-  font-weight: normal;
+  color: var(--text-strong);
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.name {
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .role {
-  margin-block-end: var(--spacing-4);
-  font-size: var(--font-size-xs);
+  margin-block-end: 12px;
+  color: var(--accent-gold);
+  font-size: 0.74rem;
+  line-height: 1.8;
 }
 
 .description {
-  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-size: 0.92rem;
   line-height: 1.8;
 }
 
 @media (max-width: 767.99px) {
   .description {
-    font-size: var(--font-size-xs);
-    line-height: 1.6;
+    font-size: 0.92rem;
+    line-height: 1.9;
   }
 }
 
 .card a:hover {
-  text-decoration: underline;
+  color: var(--accent-gold);
 }
 
 .card a::after {
@@ -58,4 +67,3 @@
   inset: 0;
   z-index: 1;
 }
-

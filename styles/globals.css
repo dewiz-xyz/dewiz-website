@@ -1,12 +1,9 @@
-/********** Custom Reset **********/
-
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
 
-/* Remove default margin */
 body,
 h1,
 h2,
@@ -22,16 +19,12 @@ dd {
   margin: 0;
 }
 
-/* Set core root defaults */
 html {
-  color-scheme: dark light;
-}
-
-html:focus-within {
+  color-scheme: dark;
   scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 24px);
 }
 
-/* Make images easier to work with */
 img,
 svg,
 picture {
@@ -39,19 +32,17 @@ picture {
   display: block;
 }
 
+video {
+  max-width: 100%;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
+  html {
     scroll-behavior: auto;
   }
 
@@ -60,140 +51,62 @@ a:not([class]) {
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
-
-/********** /Custom Reset **********/
 
 :root {
-  --max-width: 1440px;
-  --min-gutter: 2rem;
+  --header-full-height: 86px;
+  --header-height: 64px;
+  --font-body: var(--ibm-plex-sans-font), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: var(--press-start-2p-font), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --spacing-1: 0.25rem;
-  --spacing-2: 0.5rem;
-  --spacing-4: 1rem;
-  --spacing-8: 2rem;
-  --spacing-16: 4rem;
-  --spacing-32: 8rem;
-
-  --header-height: 6rem;
-  --footer-height: 6rem;
-  --section-height: calc(100vh - var(--header-height));
-
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 1rem;
-  --font-size-md: 1.25rem;
-  --font-size-lg: 1.75rem;
-  --font-size-xl: 2.5rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fg-color-link: hsl(209, 100%, 96%);
-
-    --fg-color-0: hsl(202, 100%, 80%);
-    --fg-color-1: hsl(201, 100%, 74%);
-    --fg-color-2: hsl(193, 100%, 44%);
-
-    --bg-color-0-hsl: 177, 100%, 5%;
-    --bg-color-0: hsl(177, 100%, 5%);
-    --bg-color-1: hsl(188, 100%, 15%);
-    --bg-color-2: hsl(190, 100%, 25%);
-
-    --bg-color-0-start: hsl(177, 100%, 3%);
-
-    --logo-color-primary: hsl(193, 100%, 44%);
-    --logo-color-secondary: hsl(188, 100%, 15%);
-    --logo-color-tertiary: hsl(202, 100%, 80%);
-
-    --shadow-color: hsla(177, 100%, 3%, 0.75);
-
-    --bg-overlay-menu: hsla(177, 100%, 3%, 0.75);
-  }
-
-  html {
-    color-scheme: dark;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --fg-color-link: hsl(193, 100%, 44%);
-
-    --fg-color-0: hsl(191, 100%, 26%);
-    --fg-color-1: hsl(190, 100%, 5%);
-    --fg-color-2: hsl(190, 100%, 15%);
-
-    --bg-color-0-hsl: 209, 100%, 96%;
-    --bg-color-0: hsl(209, 100%, 96%);
-    --bg-color-1: hsl(202, 100%, 74%);
-    --bg-color-2: hsl(193, 100%, 44%);
-
-    --bg-color-0-start: hsl(209, 100%, 93%);
-
-    --logo-color-primary: hsl(190, 100%, 15%);
-    --logo-color-secondary: hsl(180, 100%, 5%);
-    --logo-color-tertiary: hsl(190, 100%, 15%);
-
-    --shadow-color: hsla(209, 100%, 93%, 0.75);
-
-    --bg-overlay-menu: hsla(209, 100%, 93%, 0.75);
-  }
-
-  html {
-    color-scheme: light;
-  }
+  --bg: #001a1a;
+  --bg-soft: #002829;
+  --surface: #00383f;
+  --surface-strong: #004d5a;
+  --text: #b7efff;
+  --text-strong: #f7ffff;
+  --text-muted: #8ed8e8;
+  --border: #10b2e2;
+  --accent-cyan: #10b2e2;
+  --accent-gold: #ffc52c;
+  --accent-purple: #7624a9;
+  --logo-color-primary: hsl(193, 100%, 44%);
+  --logo-color-secondary: hsl(188, 100%, 15%);
+  --logo-color-tertiary: hsl(202, 100%, 80%);
+  --shadow: 8px 8px 0 #001010;
+  --shadow-soft: 5px 5px 0 #001010;
 }
 
 html,
 body {
-  max-width: 100vw;
-  /* overflow-x: hidden; */
+  width: 100%;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#__next {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 body {
-  font-family: var(--press-start-2p-font);
-  color: var(--fg-color-0);
-  background: linear-gradient(
-      to bottom,
-      var(--bg-color-0-start) 0%,
-      transparent var(--header-height)
-    )
-    var(--bg-color-0) fixed;
-
-  --duration: 0.125s;
-  --timing: ease;
-  transition: color var(--duration) var(--timing),
-    background-color var(--duration) var(--timing);
+  color: var(--text);
+  background:
+    linear-gradient(rgba(16, 178, 226, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 178, 226, 0.045) 1px, transparent 1px),
+    var(--bg);
+  background-size: 24px 24px;
+  font-family: var(--font-body);
+  letter-spacing: 0;
+  overflow-x: hidden;
+  overflow-wrap: anywhere;
 }
 
-p {
-  line-height: 2;
-  font-size: var(--font-size-sm);
-}
-
-@media (max-width: 767.99px) {
-  p {
-    font-size: var(--font-size-xs);
-  }
-}
-
-p + p,
-p + ul,
-p + ol,
-p + dl,
-ul + p,
-ol + p,
-dl + p {
-  margin-block-start: var(--spacing-4);
-}
-
-/**
- * Logo responsive fill colors.
- */
 svg [class*="fill-primary"] {
   fill: var(--logo-color-primary);
 }
@@ -206,10 +119,6 @@ svg [class*="fill-tertiary"] {
   fill: var(--logo-color-tertiary);
 }
 
-/**
- * Helper classes
- */
-
 .srOnly {
   position: absolute;
   left: -10000px;
@@ -221,34 +130,25 @@ svg [class*="fill-tertiary"] {
 
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--bg-color-2);
-  color: var(--fg-color-0);
-  padding: 8px;
+  top: -48px;
+  left: 12px;
   z-index: 1000;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: var(--font-size-sm);
-  transition: top 0.3s;
+  border: 2px solid var(--accent-gold);
+  background: var(--surface);
+  color: var(--text-strong);
+  padding: 10px 12px;
+  font-size: 0.84rem;
+  transition: top 0.2s ease;
 }
 
 .skip-link:focus {
-  top: 6px;
+  top: 12px;
 }
-
-/**
- * Focus styles for keyboard navigation
- */
 
 a:focus-visible,
 button:focus-visible,
 [role="button"]:focus-visible,
 input:focus-visible {
-  outline: 2px solid var(--fg-color-2);
-  outline-offset: 2px;
-}
-
-a:focus-visible {
-  text-decoration: underline;
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 4px;
 }

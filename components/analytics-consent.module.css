@@ -1,0 +1,98 @@
+.banner {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 1000;
+  display: grid;
+  width: min(780px, calc(100vw - 32px));
+  max-width: calc(100vw - 32px);
+  gap: 18px;
+  margin: 0 auto;
+  border: 2px solid var(--border);
+  padding: 18px;
+  color: var(--text);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow);
+}
+
+.banner p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.policyLink {
+  color: var(--accent-gold);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.policyLink:hover {
+  color: var(--text-strong);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.buttonPrimary,
+.buttonSecondary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border);
+  padding: 0 13px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.72rem;
+  line-height: 1.55;
+  text-align: center;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background-color 120ms ease;
+}
+
+.buttonPrimary {
+  color: var(--text-strong);
+  background: var(--accent-purple);
+  box-shadow: 4px 4px 0 var(--accent-cyan);
+}
+
+.buttonSecondary {
+  color: var(--text-strong);
+  background: var(--surface);
+  box-shadow: 4px 4px 0 #001010;
+}
+
+.buttonPrimary:hover,
+.buttonSecondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--accent-gold);
+}
+
+@media (max-width: 520px) {
+  .banner {
+    gap: 14px;
+    padding: 14px;
+  }
+
+  .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .buttonPrimary,
+  .buttonSecondary {
+    width: calc(100% - 4px);
+    min-width: 0;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+}
