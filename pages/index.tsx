@@ -15,7 +15,8 @@ import avatar0xpedro from "../public/avatar-0xpedro.jpg";
 import avatar0xjoao from "../public/avatar-0xjoao.jpg";
 import avatar0xlaz3r from "../public/avatar-0xlaz3r.png";
 import avatarRiccardo from "../public/avatar-riccardo.png";
-import avatar0xcentur1on from "../public/avatar-0xcentur1on.png";
+import avatarDusan from "../public/avatar-dusan.jpeg";
+import avatar0x5varog from "../public/avatar-0x5varog.png";
 import LogoDiscord from "../public/logo-discord.svg";
 import LogoTwitter from "../public/logo-twitter.svg";
 import LogoX from "../public/logo-x.svg";
@@ -161,19 +162,27 @@ export default function Home() {
             />
             <TeamMemberCard
               className={c.grid__item}
-              img={avatar0xcentur1on}
-              url="https://github.com/0xcentur1on"
-              name="0xCentur1on"
-              companyRole="Smart Contracts / Backend Engineer"
-              description="30+ years in software engineering. Previously in e-commerce and banking services. Shipping DeFi smart contracts since 2018. Golang, Solidity and Rust. &quot;Audentes Fortuna iuvat&quot;"
-            />
-            <TeamMemberCard
-              className={c.grid__item}
               img={avatar0xjoao}
               url="https://x.com/0xjoao_eth"
               name="0xjoao"
               companyRole="Smart Contracts Engineer"
               description="Onchain since 2017, building Web3 systems for 5+ years. Experienced in DeFi protocol systems across real production environments. EVM, anime, superheroes, and football."
+            />
+            <TeamMemberCard
+              className={c.grid__item}
+              img={avatarDusan}
+              url="https://x.com/_sunce86"
+              name="Dušan Stanivuković"
+              companyRole="Backend Engineer"
+              description="Rust engineer building DeFi execution systems for 5+ years. Enjoys Dota, craft beer, and code that compiles on the first try."
+            />
+            <TeamMemberCard
+              className={c.grid__item}
+              img={avatar0x5varog}
+              url="https://github.com/0x5varog"
+              name="0x5varog"
+              companyRole="Smart Contracts Engineer"
+              description="10+ years Solidity native. Relentless crafter and forge-smith of things that shouldn't be possible to build onchain. EVM, nature, tinkering, and engineering."
             />
           </div>
         </section>
