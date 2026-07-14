@@ -10,7 +10,8 @@ export interface LitePsmMetrics {
   eventCount: number;
   tvlSourceUrl: string;
   activitySourceUrl: string;
-  isFallback: boolean;
+  isTvlFallback: boolean;
+  isTradedVolumeFallback: boolean;
 }
 
 interface LitePsmCurrentResponse {
@@ -58,7 +59,8 @@ export const FALLBACK_LITEPSM_METRICS: LitePsmMetrics = {
   eventCount: 4010,
   tvlSourceUrl: LITEPSM_TVL_SOURCE_URL,
   activitySourceUrl: LITEPSM_ACTIVITY_SOURCE_URL,
-  isFallback: true,
+  isTvlFallback: true,
+  isTradedVolumeFallback: true,
 };
 
 function parseFiniteNumber(value: unknown) {
@@ -242,6 +244,7 @@ export async function getLitePsmMetrics(): Promise<LitePsmMetrics> {
     eventCount: tradedVolume ? tradedVolume.eventCount : FALLBACK_LITEPSM_METRICS.eventCount,
     tvlSourceUrl: LITEPSM_TVL_SOURCE_URL,
     activitySourceUrl: LITEPSM_ACTIVITY_SOURCE_URL,
-    isFallback: !current || !tradedVolume,
+    isTvlFallback: !current,
+    isTradedVolumeFallback: !tradedVolume,
   };
 }

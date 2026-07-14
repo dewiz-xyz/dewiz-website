@@ -33,6 +33,7 @@ function writeStoredConsent(value: AnalyticsConsentValue) {
 
 export default function AnalyticsConsent() {
   const [consentState, setConsentState] = useState<ConsentState>("checking");
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   useEffect(() => {
     const storedConsent = readStoredConsent();
@@ -47,7 +48,7 @@ export default function AnalyticsConsent() {
     }
 
     function openConsentSettings() {
-      setConsentState("unset");
+      setIsSettingsOpen(true);
     }
 
     window.addEventListener(ANALYTICS_CONSENT_OPEN_EVENT, openConsentSettings);
@@ -60,6 +61,7 @@ export default function AnalyticsConsent() {
   function updateConsent(value: AnalyticsConsentValue) {
     writeStoredConsent(value);
     setConsentState(value);
+    setIsSettingsOpen(false);
 
     if (value === "accepted") {
       loadGoogleTagManager();
@@ -72,7 +74,7 @@ export default function AnalyticsConsent() {
     }
   }
 
-  if (consentState !== "unset") {
+  if (!isSettingsOpen && consentState !== "unset") {
     return null;
   }
 

@@ -19,14 +19,22 @@ export default function LitePsmMetricsSourceNote({ litePsmMetrics }: Props) {
         Sky Info LitePSM events
       </a>{" "}
       since {litePsmMetrics.firstEventDateDisplay}. Traded volume is not presented as TVL.
-      {litePsmMetrics.isFallback ? (
+      {litePsmMetrics.isTvlFallback ? (
         <>
-          {" "}
-          Fallback values calculated on July 8, 2026.{" "}
+          {" "}Fallback TVL was calculated on July 8, 2026.{" "}
           <a href={litePsmMetrics.tvlSourceUrl} target="_new" rel="noreferrer noopener">
-            Visit Sky Info
+            Visit Sky Info for current TVL
           </a>{" "}
-          for the current value.
+          instead.
+        </>
+      ) : null}
+      {litePsmMetrics.isTradedVolumeFallback ? (
+        <>
+          {" "}Fallback traded volume was calculated through July 8, 2026.{" "}
+          <a href={litePsmMetrics.activitySourceUrl} target="_new" rel="noreferrer noopener">
+            Visit Sky Info activity
+          </a>{" "}
+          for current event data.
         </>
       ) : null}
     </p>
