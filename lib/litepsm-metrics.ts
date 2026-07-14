@@ -216,22 +216,32 @@ export async function getLitePsmMetrics(): Promise<LitePsmMetrics> {
     fetchAllTimeTradedVolume(),
   ]);
 
-  if (!current || !tradedVolume) {
-    return FALLBACK_LITEPSM_METRICS;
-  }
-
   return {
-    displayTvl: formatBillions(current.currentTvl),
-    currentTvlValue: current.currentTvlValue,
-    displayTradedVolume: formatBillions(tradedVolume.allTimeTradedVolume),
-    allTimeTradedVolumeValue: tradedVolume.allTimeTradedVolumeValue,
-    firstEventDate: tradedVolume.firstEventDate,
-    firstEventDateDisplay: tradedVolume.firstEventDateDisplay,
-    lastEventDate: tradedVolume.lastEventDate,
-    lastEventDateDisplay: tradedVolume.lastEventDateDisplay,
-    eventCount: tradedVolume.eventCount,
+    displayTvl: current ? formatBillions(current.currentTvl) : FALLBACK_LITEPSM_METRICS.displayTvl,
+    currentTvlValue: current
+      ? current.currentTvlValue
+      : FALLBACK_LITEPSM_METRICS.currentTvlValue,
+    displayTradedVolume: tradedVolume
+      ? formatBillions(tradedVolume.allTimeTradedVolume)
+      : FALLBACK_LITEPSM_METRICS.displayTradedVolume,
+    allTimeTradedVolumeValue: tradedVolume
+      ? tradedVolume.allTimeTradedVolumeValue
+      : FALLBACK_LITEPSM_METRICS.allTimeTradedVolumeValue,
+    firstEventDate: tradedVolume
+      ? tradedVolume.firstEventDate
+      : FALLBACK_LITEPSM_METRICS.firstEventDate,
+    firstEventDateDisplay: tradedVolume
+      ? tradedVolume.firstEventDateDisplay
+      : FALLBACK_LITEPSM_METRICS.firstEventDateDisplay,
+    lastEventDate: tradedVolume
+      ? tradedVolume.lastEventDate
+      : FALLBACK_LITEPSM_METRICS.lastEventDate,
+    lastEventDateDisplay: tradedVolume
+      ? tradedVolume.lastEventDateDisplay
+      : FALLBACK_LITEPSM_METRICS.lastEventDateDisplay,
+    eventCount: tradedVolume ? tradedVolume.eventCount : FALLBACK_LITEPSM_METRICS.eventCount,
     tvlSourceUrl: LITEPSM_TVL_SOURCE_URL,
     activitySourceUrl: LITEPSM_ACTIVITY_SOURCE_URL,
-    isFallback: false,
+    isFallback: !current || !tradedVolume,
   };
 }

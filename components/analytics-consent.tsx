@@ -67,6 +67,9 @@ export default function AnalyticsConsent() {
     }
 
     unloadGoogleTagManager();
+    if (consentState === "accepted") {
+      window.location.reload();
+    }
   }
 
   if (consentState !== "unset") {

@@ -1,4 +1,5 @@
 import type { GetStaticProps } from "next";
+import { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import ProofMetrics from "../components/proof-metrics";
 import CaseStudyList from "../components/case-study-list";
@@ -35,6 +36,18 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 export default function DSolver({ skyProtocolValue, litePsmMetrics }: Props) {
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(true);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotionPreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+    updateMotionPreference();
+    mediaQuery.addEventListener("change", updateMotionPreference);
+
+    return () => mediaQuery.removeEventListener("change", updateMotionPreference);
+  }, []);
+
   return (
     <Layout
       title="dSolver"
@@ -66,12 +79,15 @@ export default function DSolver({ skyProtocolValue, litePsmMetrics }: Props) {
           <video
             className={c.heroDiagram}
             aria-label="dSolver liquidity execution engine animated diagram"
-            autoPlay
+            autoPlay={!prefersReducedMotion}
+            controls
             loop
             muted
             playsInline
+            poster="/dsolver-execution-engine.png"
           >
             <source src="/dsolver-center-hero-transparent-alpha.webm" type="video/webm" />
+            <source src="/dsolver-execution-engine.mp4" type="video/mp4" />
           </video>
         </div>
       </section>

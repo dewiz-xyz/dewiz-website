@@ -39,9 +39,10 @@ export function loadGoogleTagManager() {
 }
 
 export function unloadGoogleTagManager() {
-  if (typeof document === "undefined") {
+  if (typeof window === "undefined" || typeof document === "undefined") {
     return;
   }
 
   document.getElementById("dewiz-gtm-script")?.remove();
+  (window as GtmWindow).dataLayer = [];
 }
