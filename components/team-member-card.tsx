@@ -36,11 +36,11 @@ export default function TeamMemberCard({
     <div {...props} className={clsx(c.card, className)}>
       <div className={c.avatar}>
         <Image src={img} alt={name} />
+      </div>
+      <div className={c.content}>
         <h3 className={c.name}>
           <Link href={url} target="_blank" rel="noreferrer noopener">{name}</Link>
         </h3>
-      </div>
-      <div className={c.content}>
         <h4 className={c.role}>{companyRole}</h4>
         <p className={c.description}>
           {description}

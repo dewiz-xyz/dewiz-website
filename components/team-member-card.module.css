@@ -12,7 +12,6 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 14px;
   align-items: flex-start;
 }
 
@@ -24,6 +23,8 @@
 
 .content {
   z-index: 2;
+  display: grid;
+  gap: 10px;
   padding-top: 2px;
 }
 
@@ -31,15 +32,12 @@
   color: var(--text-strong);
   font-family: var(--font-display);
   font-weight: 400;
-}
-
-.name {
   font-size: 0.9rem;
   line-height: 1.6;
 }
 
 .role {
-  margin-block-end: 12px;
+  margin: 2px 0;
   color: var(--accent-cyan);
   font-family: var(--font-body);
   font-weight: 700;
