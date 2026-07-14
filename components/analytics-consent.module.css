@@ -23,7 +23,7 @@
 }
 
 .policyLink {
-  color: var(--accent-gold);
+  color: var(--accent-cyan);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
@@ -74,7 +74,20 @@
 .buttonPrimary:hover,
 .buttonSecondary:hover {
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--accent-gold);
+  box-shadow: 2px 2px 0 var(--accent-cyan);
+}
+
+.buttonPrimary:active,
+.buttonSecondary:active {
+  transform: translate(4px, 4px) scale(0.985);
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .buttonPrimary,
+  .buttonSecondary {
+    transition: none;
+  }
 }
 
 @media (max-width: 520px) {

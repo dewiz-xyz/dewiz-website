@@ -1,7 +1,7 @@
 import "normalize.css/normalize.css";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { IBM_Plex_Sans, Press_Start_2P } from "next/font/google";
+import { Barlow, Press_Start_2P } from "next/font/google";
 
 const ps2p = Press_Start_2P({
   weight: "400",
@@ -9,10 +9,10 @@ const ps2p = Press_Start_2P({
   variable: "--press-start-2p-font",
 });
 
-const ibmPlexSans = IBM_Plex_Sans({
+const barlow = Barlow({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--ibm-plex-sans-font",
+  variable: "--barlow-font",
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <style jsx global>{`
       :root {
         --press-start-2p-font: ${ps2p.style.fontFamily};
-        --ibm-plex-sans-font: ${ibmPlexSans.style.fontFamily};
+        --barlow-font: ${barlow.style.fontFamily};
       }
       `}</style>
       <Component {...pageProps} />
