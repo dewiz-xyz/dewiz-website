@@ -109,7 +109,7 @@ export default function Home({ skyProtocolValue, litePsmMetrics }: Props) {
               Dewiz designs, implements, reviews, and executes critical smart contract systems for
               Sky and other DeFi protocols, including governance operations for executive votes.
             </p>
-            <Link href="/smart-contract-development">View smart contract work</Link>
+            <Link href="/smart-contracts">View smart contract work</Link>
           </article>
         </div>
       </section>

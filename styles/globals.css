@@ -61,6 +61,9 @@ a {
   --header-height: 64px;
   --font-body: var(--barlow-font), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-display: var(--press-start-2p-font), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-size-heading-primary: clamp(1.15rem, 2.4vw, 2rem);
+  --font-size-heading-secondary: clamp(1rem, 1.9vw, 1.65rem);
+  --background-grid-size: 24px;
 
   --bg: #001a1a;
   --bg-soft: #002829;
@@ -71,6 +74,7 @@ a {
   --text-muted: #8ed8e8;
   --border: #00B2E2;
   --accent-cyan: #00B2E2;
+  --accent-yellow: #FFC52C;
   --accent-purple: #6A1B9A;
   --logo-color-primary: hsl(193, 100%, 44%);
   --logo-color-secondary: hsl(188, 100%, 15%);
@@ -95,7 +99,13 @@ body {
 
 body {
   color: var(--text);
-  background: var(--bg);
+  background:
+    linear-gradient(rgba(0, 178, 226, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 178, 226, 0.08) 1px, transparent 1px),
+    var(--bg);
+  background-size: var(--background-grid-size) var(--background-grid-size);
+  background-repeat: repeat;
+  background-attachment: scroll;
   font-family: var(--font-body);
   letter-spacing: 0;
   overflow-x: hidden;

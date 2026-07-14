@@ -23,7 +23,7 @@ const values = [
   {
     title: "Independent builders",
     description:
-      "The team builds around pseudonymous reputation, deep technical contribution, and long-term alignment with decentralized finance.",
+      "The team builds its reputation through deep technical contribution, public work, and long-term alignment with decentralized finance.",
   },
 ];
 

@@ -7,7 +7,7 @@ import c from "./header.module.css";
 
 const navLinks = [
   { href: "/dsolver", label: "dSolver" },
-  { href: "/smart-contract-development", label: "Smart Contracts & Consulting" },
+  { href: "/smart-contracts", label: "Smart Contracts" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

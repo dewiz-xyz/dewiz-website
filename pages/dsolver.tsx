@@ -1,5 +1,5 @@
 import type { GetStaticProps } from "next";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import Layout from "../components/layout";
 import ProofMetrics from "../components/proof-metrics";
 import CaseStudyList from "../components/case-study-list";
@@ -36,11 +36,22 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 export default function DSolver({ skyProtocolValue, litePsmMetrics }: Props) {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const updateMotionPreference = () => setPrefersReducedMotion(mediaQuery.matches);
+    const updateMotionPreference = () => {
+      const video = videoRef.current;
+      if (!video) return;
+
+      if (mediaQuery.matches) {
+        video.pause();
+        video.currentTime = 0;
+        return;
+      }
+
+      void video.play().catch(() => undefined);
+    };
 
     updateMotionPreference();
     mediaQuery.addEventListener("change", updateMotionPreference);
@@ -59,7 +70,7 @@ export default function DSolver({ skyProtocolValue, litePsmMetrics }: Props) {
         </>
       }
     >
-      <section className={c.hero}>
+      <section className={`${c.hero} ${c.solverHero}`}>
         <div className={c.hero__copy}>
           <span className={c.eyebrow}>Solver infrastructure</span>
           <h1>dSolver brings institutional inventory discipline to intent settlement.</h1>
@@ -77,10 +88,9 @@ export default function DSolver({ skyProtocolValue, litePsmMetrics }: Props) {
         </div>
         <div className={`${c.hero__visual} ${c.heroVisualClean}`}>
           <video
+            ref={videoRef}
             className={c.heroDiagram}
             aria-label="dSolver liquidity execution engine animated diagram"
-            autoPlay={!prefersReducedMotion}
-            controls
             loop
             muted
             playsInline

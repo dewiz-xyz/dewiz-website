@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   };
 };
 
-export default function SmartContractDevelopment({ litePsmMetrics }: Props) {
+export default function SmartContracts({ litePsmMetrics }: Props) {
   return (
     <Layout
       title="Smart Contracts & Consulting"
