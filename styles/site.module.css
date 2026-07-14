@@ -274,18 +274,15 @@ video.heroDiagram {
   word-break: break-word;
 }
 
-.valueCounter,
-.sourceAsterisk {
-  color: var(--accent-yellow);
-}
-
 .valueCounter {
+  color: var(--accent-yellow);
   white-space: nowrap;
 }
 
 .sourceAsterisk {
   display: inline-block;
   margin-left: 0.18em;
+  color: inherit;
   font-size: 0.42em;
   line-height: 1;
   text-decoration: none;
@@ -293,7 +290,7 @@ video.heroDiagram {
 }
 
 .sourceAsterisk:hover {
-  color: var(--text-strong);
+  color: inherit;
 }
 
 .metricGrid,
