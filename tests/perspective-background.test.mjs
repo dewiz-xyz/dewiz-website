@@ -26,6 +26,10 @@ test("perspective scene is fixed with the approved 33/67 geometry and wide fades
   assert.match(siteStyles, /\.backgroundFloorViewport\s*\{[^}]*inset:\s*33% 0 0;/s);
   assert.match(
     siteStyles,
+    /\.backgroundFloor\s*\{[^}]*background-size:\s*12px 6px;/s,
+  );
+  assert.match(
+    siteStyles,
     /\.backgroundFloor\s*\{[^}]*transform:\s*rotateX\(58deg\) scale\(1\.05\);/s,
   );
   assert.match(
