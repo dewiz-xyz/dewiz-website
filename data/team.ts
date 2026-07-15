@@ -84,19 +84,19 @@ export const TEAM_MEMBERS: TeamMember[] = [
       "Rust engineer building DeFi execution systems for 5+ years. Enjoys Dota, craft beer, and code that compiles on the first try.",
   },
   {
-    img: avatar0x5varog,
-    url: "https://github.com/0x5varog",
-    name: "0x5varog",
-    companyRole: "Smart Contracts Engineer",
-    description:
-      "10+ years Solidity native. Relentless crafter and forge-smith of things that shouldn't be possible to build onchain. EVM, nature, tinkering, and engineering.",
-  },
-  {
     img: avatar0xSantiago,
     url: "https://github.com/0xsanti1",
     name: "0xSantiago",
     companyRole: "Product & Technical Project Manager",
     description:
       "6+ years building and shipping technical products across Web3 and fintech. Previously on institutional crypto products, EVM dapps and Rust-based blockchain protocols. BJJ and cars.",
+  },
+  {
+    img: avatar0x5varog,
+    url: "https://github.com/0x5varog",
+    name: "0x5varog",
+    companyRole: "Smart Contracts Engineer",
+    description:
+      "10+ years Solidity native. Relentless crafter and forge-smith of things that shouldn't be possible to build onchain. EVM, nature, tinkering, and engineering.",
   },
 ];
