@@ -22,15 +22,15 @@ export const SOCIAL_LINKS = [
 export const PROOF_METRICS = [
   {
     value: "Since 2021",
-    label: "Sky/MakerDAO protocol engineering",
+    label: "Sky Protocol (former MakerDAO) engineering",
     description:
-      "Dewiz contributors have supported core Sky and MakerDAO protocol work across engineering, integrations, and governance execution.",
+      "Dewiz contributors have supported core protocol work for Sky Protocol (former MakerDAO) across engineering, integrations, and governance execution.",
   },
   {
     value: "Multi-billion",
     label: "LitePSM stablecoin liquidity",
     description:
-      "Dewiz built LitePSM, a capital-efficient stablecoin module serving multi-billion dollar liquidity for the Sky/MakerDAO ecosystem.",
+      "Dewiz built LitePSM, a capital-efficient stablecoin module serving multi-billion dollar liquidity for the Sky Protocol (former MakerDAO) ecosystem.",
   },
   {
     value: "GovOps",

@@ -43,9 +43,9 @@ export default function SmartContracts({ litePsmMetrics }: Props) {
           <span className={c.eyebrow}>Smart Contracts & Consulting</span>
           <h1>EVM engineering for protocols where correctness is not optional.</h1>
           <p>
-            Dewiz has grown from smart contract development and consultancy for Sky, MakerDAO, and
-            other DeFi protocols. We build and operate systems that govern stablecoin liquidity,
-            token rewards, stability parameters, and executive-vote execution.
+            Dewiz has grown from smart contract development and consultancy for Sky Protocol (former
+            MakerDAO) and other DeFi protocols. We build and operate systems that govern stablecoin
+            liquidity, token rewards, stability parameters, and executive-vote execution.
           </p>
           <div className={c.actions}>
             <a className={c.buttonPrimary} href={mailto("Smart contract development inquiry")}>

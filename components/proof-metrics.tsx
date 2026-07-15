@@ -37,7 +37,7 @@ function getProofMetrics(litePsmMetrics?: LitePsmMetrics): ProofMetric[] {
         </>
       ),
       label: "Current LitePSM TVL",
-      description: `Dewiz built LitePSM, a capital-efficient stablecoin module serving ${litePsmMetrics.displayTvl} in current TVL and ${litePsmMetrics.displayTradedVolume} in estimated all-time traded volume for the Sky/MakerDAO ecosystem.`,
+      description: `Dewiz built LitePSM, a capital-efficient stablecoin module serving ${litePsmMetrics.displayTvl} in current TVL and ${litePsmMetrics.displayTradedVolume} in estimated all-time traded volume for the Sky Protocol (former MakerDAO) ecosystem.`,
     };
   });
 }
