@@ -8,6 +8,7 @@ import avatarRiccardo from "../public/avatar-riccardo.png";
 import avatar0xjoao from "../public/avatar-0xjoao.jpg";
 import avatarDusan from "../public/avatar-dusan.jpeg";
 import avatar0x5varog from "../public/avatar-0x5varog.png";
+import avatar0xSantiago from "../public/avatar-0xsantiago.png";
 
 export interface TeamMember {
   img: StaticImageData;
@@ -89,5 +90,13 @@ export const TEAM_MEMBERS: TeamMember[] = [
     companyRole: "Smart Contracts Engineer",
     description:
       "10+ years Solidity native. Relentless crafter and forge-smith of things that shouldn't be possible to build onchain. EVM, nature, tinkering, and engineering.",
+  },
+  {
+    img: avatar0xSantiago,
+    url: "https://github.com/0xsanti1",
+    name: "0xSantiago",
+    companyRole: "Product & Technical Project Manager",
+    description:
+      "6+ years building and shipping technical products across Web3 and fintech. Previously on institutional crypto products, EVM dapps and Rust-based blockchain protocols. BJJ and cars.",
   },
 ];
