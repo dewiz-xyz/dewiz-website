@@ -1,4 +1,6 @@
 .app {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -6,6 +8,65 @@
   max-width: 100%;
   overflow-x: clip;
   padding-top: var(--header-full-height);
+}
+
+.perspectiveBackground {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg);
+  pointer-events: none;
+}
+
+.backgroundWall {
+  position: absolute;
+  inset: 0 0 67%;
+  background-image:
+    linear-gradient(rgba(0, 178, 226, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 178, 226, 0.07) 1px, transparent 1px);
+  background-size: var(--background-grid-size) var(--background-grid-size);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 22%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 22%, transparent 100%);
+}
+
+.backgroundFloorViewport {
+  position: absolute;
+  inset: 33% 0 0;
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--bg) 0%, rgba(0, 40, 41, 0.2) 34%, transparent 66%);
+  perspective: 340px;
+  perspective-origin: 50% 0;
+}
+
+.backgroundFloor {
+  position: absolute;
+  top: -2%;
+  left: -65%;
+  width: 230%;
+  height: 145%;
+  background-image:
+    linear-gradient(rgba(0, 178, 226, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 178, 226, 0.13) 1px, transparent 1px);
+  background-size: 27px 27px;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 18%,
+    #000 55%,
+    #000 82%,
+    rgba(0, 0, 0, 0.52)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 18%,
+    #000 55%,
+    #000 82%,
+    rgba(0, 0, 0, 0.52)
+  );
+  transform: rotateX(58deg) scale(1.05);
+  transform-origin: 50% 0;
 }
 
 .main {
