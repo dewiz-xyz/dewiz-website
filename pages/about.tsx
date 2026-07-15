@@ -36,7 +36,7 @@ export default function About() {
       <section className={c.hero}>
         <div className={c.hero__copy}>
           <span className={c.eyebrow}>About Dewiz</span>
-          <h1>A DeFi engineering team built around high-consequence systems.</h1>
+          <h1>A DeFi engineering team built around high-stakes systems.</h1>
           <p>
             Dewiz co-founders are former MakerDAO Core Unit contributors who have contributed to
             Sky and MakerDAO protocol work since 2021 and to the broader Ethereum ecosystem since
