@@ -76,20 +76,20 @@ export const TEAM_MEMBERS: TeamMember[] = [
       "Onchain since 2017, building Web3 systems for 5+ years. Experienced in DeFi protocol systems across real production environments. EVM, anime, superheroes, and football.",
   },
   {
-    img: avatar0xSantiago,
-    url: "https://github.com/0xsanti1",
-    name: "0xSantiago",
-    companyRole: "Product & Technical Project Manager",
-    description:
-      "6+ years building and shipping technical products across Web3 and fintech. Previously on institutional crypto products, EVM dapps and Rust-based blockchain protocols. BJJ and cars.",
-  },
-  {
     img: avatarDusan,
     url: "https://x.com/_sunce86",
     name: "Dusan",
     companyRole: "Backend Engineer",
     description:
       "Rust engineer building DeFi execution systems for 5+ years. Enjoys Dota, craft beer, and code that compiles on the first try.",
+  },
+  {
+    img: avatar0xSantiago,
+    url: "https://github.com/0xsanti1",
+    name: "0xSantiago",
+    companyRole: "Product & Technical Project Manager",
+    description:
+      "6+ years building and shipping technical products across Web3 and fintech. Previously on institutional crypto products, EVM dapps and Rust-based blockchain protocols. BJJ and cars.",
   },
   {
     img: avatar0x5varog,
