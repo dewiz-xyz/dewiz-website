@@ -629,7 +629,8 @@ video.heroDiagram {
   border-bottom: 1px solid rgba(0, 178, 226, 0.48);
 }
 
-.teamGrid > :nth-last-child(-n + 3) {
+.teamGrid > :nth-child(3n + 1):nth-last-child(-n + 3),
+.teamGrid > :nth-child(3n + 1):nth-last-child(-n + 3) ~ * {
   border-bottom: 0;
 }
 
@@ -677,7 +678,7 @@ video.heroDiagram {
     gap: 0;
   }
 
-  .teamGrid > :nth-last-child(-n + 3) {
+  .teamGrid > * {
     border-bottom: 1px solid rgba(0, 178, 226, 0.48);
   }
 
