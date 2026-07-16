@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import AnalyticsConsent from "./analytics-consent";
 import Header from "./header";
 import Footer from "./footer";
+import PerspectiveBackground from "./perspective-background";
 import c from "../styles/site.module.css";
 
 interface Props {
@@ -17,12 +18,7 @@ export default function Layout({ title, description, children, footerSourceNote 
 
   return (
     <div className={c.app}>
-      <div className={c.perspectiveBackground} aria-hidden="true">
-        <div className={c.backgroundWall} />
-        <div className={c.backgroundFloorViewport}>
-          <div className={c.backgroundFloor} />
-        </div>
-      </div>
+      <PerspectiveBackground />
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
